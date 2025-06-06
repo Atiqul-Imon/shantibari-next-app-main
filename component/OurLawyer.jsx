@@ -47,7 +47,7 @@ export default function OurLawyers() {
   return (
     <div className="bg-gray-200 w-full flex justify-center items-center py-12">
       <div className="w-full max-w-7xl px-4">
-        <h1 className="text-3xl font-bold text-center mb-8 font-playfair">
+        <h1 className="text-3xl font-bold text-center mb-8 font-playfair text-gray-900">
           Our Lawyers
         </h1>
         <div className="flex flex-wrap gap-6 justify-center">
