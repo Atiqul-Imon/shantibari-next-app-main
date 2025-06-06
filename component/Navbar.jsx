@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,9 +29,21 @@ const Navbar = () => {
         <div className="flex justify-between items-center py-6">
           {/* Logo */}
           <div className="text-xl font-bold">
-            <Link href="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-black hover:text-gray-400">
-              YourLogo
-            </Link>
+           <Link
+  href="/"
+  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+  className="flex items-center space-x-2"
+>
+  <Image
+    src="/logo.jpg"
+    alt="Logo"
+    width={60}
+    height={60}
+    priority
+  />
+
+</Link>
+
           </div>
 
           {/* Mobile Menu Button */}

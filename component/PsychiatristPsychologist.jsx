@@ -61,7 +61,7 @@ function PsychiatristPsychologist() {
 
   const handleCardClick = (name) => {
     const formattedName = formatNameForUrl(name);
-    router.push(`/profile/${formattedName}`);
+    router.push(`/psychiatristandpsychologist/${formattedName}`);
   };
 
   return (

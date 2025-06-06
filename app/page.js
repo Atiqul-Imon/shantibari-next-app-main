@@ -1,5 +1,6 @@
 import CharityMorganCafe from "@/component/CharityMorganCafe";
 import FounderMembers from "@/component/FounderMembers";
+import Gallery from "@/component/Gallery";
 import HeroSection from "@/component/HeroSection";
 import OurAdvisors from "@/component/ourAdvisor";
 import OurLawyers from "@/component/OurLawyer";
@@ -19,6 +20,7 @@ export default function Home() {
    <OurServices />
    <OurTeam />
    <CharityMorganCafe />
+   <Gallery />
    </>
   );
 }

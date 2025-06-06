@@ -1,14 +1,11 @@
+"use client";
+
+import Link from "next/link";
 import React from "react";
 
-
-function LawyerCard({ name, description, imgSrc, id }) {
-
-
+function LawyerCard({ name, description, imgSrc }) {
   return (
-    <div
-               
-      className="w-60 p-4 bg-white rounded-xl flex flex-col items-center shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer"
-    >
+    <div className="w-60 h-[340px] p-4 bg-white rounded-xl flex flex-col items-center shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer">
       <img
         className="h-40 w-40 object-cover rounded-full border-gray-300"
         src={imgSrc}
@@ -22,7 +19,7 @@ function LawyerCard({ name, description, imgSrc, id }) {
   );
 }
 
-function OurLawyers() {
+export default function OurLawyers() {
   const lawyers = [
     {
       id: 1,
@@ -31,18 +28,17 @@ function OurLawyers() {
       imgSrc:
         "https://res.cloudinary.com/db5yniogx/image/upload/v1735494831/nahidshamsshantibaricloud_wqbzwp.jpg",
     },
-
     {
       id: 2,
-      name: "Adv. Mahjabin Rabbani ",
+      name: "Adv. Mahjabin Rabbani",
       description: "Advocate, Bangladesh Supreme Court",
       imgSrc:
         "https://res.cloudinary.com/db5yniogx/image/upload/v1740936984/mahjabinrabbani123-removebg-preview_1_kztsra.png",
     },
     {
       id: 3,
-      name: "Adv. Fahriya Ferdous ",
-      description: "Advocate, Bangladesh Supreme court",
+      name: "Adv. Fahriya Ferdous",
+      description: "Advocate, Bangladesh Supreme Court",
       imgSrc:
         "https://res.cloudinary.com/db5yniogx/image/upload/v1740936657/Adv-Fahriya-Ferdousecloud234-removebg-preview_1_jkohth.png",
     },
@@ -56,18 +52,16 @@ function OurLawyers() {
         </h1>
         <div className="flex flex-wrap gap-6 justify-center">
           {lawyers.map((lawyer) => (
-            <LawyerCard
-              key={lawyer.id}
-              id={lawyer.id}
-              name={lawyer.name}
-              description={lawyer.description}
-              imgSrc={lawyer.imgSrc}
-            />
+            <Link key={lawyer.id} href={`/lawyers/${lawyer.id}`}>
+              <LawyerCard
+                name={lawyer.name}
+                description={lawyer.description}
+                imgSrc={lawyer.imgSrc}
+              />
+            </Link>
           ))}
         </div>
       </div>
     </div>
   );
 }
-
-export default OurLawyers;
