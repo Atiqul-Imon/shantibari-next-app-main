@@ -35,7 +35,7 @@ const Navbar = () => {
   className="flex items-center space-x-2"
 >
   <Image
-    src="/logo.jpg"
+    src="/images/logo.jpg"
     alt="Logo"
     width={60}
     height={60}
