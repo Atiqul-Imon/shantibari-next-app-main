@@ -27,7 +27,7 @@ export default function Home() {
         <meta property="og:type" content="website" />
 
         {/* Twitter */}
-        <meta name="twitter:card" content="Shantibari is a women’s organization, based in Dhaka, Bangladesh" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Welcome to Shantibari" />
         <meta name="twitter:description" content="Comprehensive care from professionals in psychology, law, wellness and more" />
         <meta name="twitter:image" content="/images/hero-bg.jpeg" />
@@ -35,30 +35,32 @@ export default function Home() {
     type="application/ld+json"
     dangerouslySetInnerHTML={{
       __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Shantibari",
-        "url": "https://shantibaribd.org/",
-        "logo": "https://shantibaribd.org/images/logo.jpg",
-        "image": "https://shantibaribd.org/images/hero-bg.jpeg",
-        "description":
-          "Shantibari is a women’s organization, based in Dhaka, Bangladesh, which aims to empower women through psychology, law, wellness, and community development services.",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Dhaka",
-          "addressCountry": "BD"
-        },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "email": "info@shantibaribd.org",
-          "contactType": "Customer Service",
-          "areaServed": "BD"
-        },
-        "sameAs": [
-          "https://www.facebook.com/shantibari24",
-          "https://www.instagram.com/shantibari24"
-        ]
-      })
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Shantibari",
+  "url": "https://shantibaribd.org/",
+  "logo": "https://shantibaribd.org/images/logo.jpg",
+  "image": "https://shantibaribd.org/images/hero-bg.jpeg",
+  "description": "Shantibari is a women’s organization, based in Dhaka, Bangladesh, which aims to empower women through psychology, law, wellness, and community development services.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "3/1, Block # F, Lalmatia", 
+    "addressLocality": "Dhaka",
+    "addressCountry": "BD"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "info@shantibaribd.org",
+    "contactType": "Customer Service",
+    "areaServed": "BD"
+  },
+  "sameAs": [
+    "https://www.facebook.com/shantibari24",
+    "https://www.instagram.com/shantibari24",
+    "https://www.linkedin.com/in/shantibari-ltd/"
+  ],
+  "hasMap": "https://www.google.com/maps/place/3%2F1,+Block+%23+F,+Lalmatia,+Dhaka,+Bangladesh"
+})
     }}
   />
 </Head>

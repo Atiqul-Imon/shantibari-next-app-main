@@ -92,10 +92,11 @@ const MentalHealthSupport = () => {
       "https://res.cloudinary.com/db5yniogx/image/upload/v1736272011/mentalhealthSupportHeroImagecloud_ywnd3h_i08dbd.jpg",
     sameAs: [
       "https://www.facebook.com/shantibari24",
-      "https://www.instagram.com/shantibari24"
+      "https://www.instagram.com/shantibari24",
+       "https://www.linkedin.com/in/shantibari-ltd/"
     ],
     department: {
-      "@type": "Organization",
+      "@type": "Mental Health Support Service",
       name: "Shantibari Mental Health Support Service",
       member: teamMembers.map((member) => ({
         "@type": "Person",

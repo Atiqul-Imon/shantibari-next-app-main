@@ -1,34 +1,67 @@
-
 import React from "react";
-import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
+
+export const metadata = {
+  title: "Legal Advice and Services - Shantibari",
+  description: "Get expert legal advice from Supreme Court advocates in Bangladesh. Family law, criminal defense, contracts, and inheritance planning services.",
+  keywords: "legal advice Bangladesh, Supreme Court lawyer, family law Bangladesh, criminal defense attorney, legal consultation Dhaka, contract drafting, inheritance planning",
+  
+  alternates: {
+    canonical: "https://shantibaribd.org/services/legal-advice-and-services",
+  },
+  
+  openGraph: {
+    title: "Legal Advice and Services - Shantibari",
+    description: "Connect with top lawyers in Bangladesh for trusted legal solutions",
+    images: [
+      {
+        url: "https://res.cloudinary.com/db5yniogx/image/upload/v1736942344/legalservicescloud_tm2nqv.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Legal Advice Services at Shantibari",
+      },
+    ],
+    url: "https://shantibaribd.org/services/legal-advice-and-services",
+    type: "website",
+    locale: "en_BD",
+  },
+  
+  twitter: {
+    card: "summary_large_image",
+    title: "Legal Advice and Services - Shantibari",
+    description: "Expert legal counsel from top lawyers in Bangladesh",
+    images: ["https://res.cloudinary.com/db5yniogx/image/upload/v1736942344/legalservicescloud_tm2nqv.jpg"],
+    site: "@shantibari_bd",
+  },
+};
 
 function LegalAdviceDetails() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "Legal Advice and Services - Shantibari",
+    "description": "Professional legal services by top lawyers in Bangladesh",
+    "url": "https://shantibaribd.org/services/legal-advice-and-services",
+    "telephone": "+880 1325-167271",
+    "areaServed": "Bangladesh",
+    "offers": {
+      "@type": "Offer",
+      "name": "Legal Consultation",
+      "price": "Varies"
+    },
+    "image": "https://res.cloudinary.com/db5yniogx/image/upload/v1736942344/legalservicescloud_tm2nqv.jpg",
+    "sameAs": [
+      "https://facebook.com/shantibari24",
+      "https://www.linkedin.com/in/shantibari-ltd/"
+    ]
+  };
+
   return (
     <>
-      <Head>
-        <title>Expert Legal Advice & Services | Shantibari Legal Team</title>
-        <meta
-          name="description"
-          content="Access expert legal advice and professional services from our advocates. Get guidance on family law, criminal defense, contracts, and more."
-        />
-        <meta
-          name="keywords"
-          content="legal advice, legal services, family law, criminal defense, legal consultation, lawyers in Bangladesh, Supreme Court advocates"
-        />
-        <link rel="canonical" href="https://shantibaribd.org/services/legal-advice-and-services" />
-        <meta property="og:title" content="Expert Legal Advice & Services" />
-        <meta
-          property="og:description"
-          content="Connect with top advocates in Bangladesh for trusted legal solutions tailored to your needs."
-        />
-        <meta
-          property="og:image"
-          content="https://res.cloudinary.com/db5yniogx/image/upload/v1736942344/legalservicescloud_tm2nqv.jpg"
-        />
-        <meta property="og:type" content="website" />
-      </Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       <main className="w-full bg-gray-50">
         {/* Hero Section */}
@@ -36,20 +69,19 @@ function LegalAdviceDetails() {
           <Image
             src="https://res.cloudinary.com/db5yniogx/image/upload/v1736942344/legalservicescloud_tm2nqv.jpg"
             alt="Legal services hero background"
-            layout="fill"
-            objectFit="cover"
-            className="z-0"
+            fill
+            priority
+            className="z-0 object-cover"
           />
-          <div className="absolute inset-0  flex items-center justify-center z-10 border-2">
-           
-           <div className="border-2 border-white p-1 backdrop-blur-md">
-                <h1 className="text-white text-4xl font-bold font-playfair text-center">
-              Legal Advice and Services
-            </h1>
-           </div>
-          
+          <div className="absolute inset-0 flex items-center justify-center z-10">
+            <div className="border-2 border-white p-4 backdrop-blur-md">
+              <h1 className="text-white text-4xl md:text-5xl font-bold font-playfair text-center">
+                Legal Advice and Services
+              </h1>
+            </div>
           </div>
         </section>
+
 
         {/* Description Section */}
         <section className="max-w-[1440px] mx-auto px-4 py-12">

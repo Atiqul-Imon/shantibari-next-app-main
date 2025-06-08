@@ -26,17 +26,16 @@ function Footer() {
             <h2 className="text-lg font-bold mb-4 text-white">Quick Links</h2>
             <ul className="text-sm space-y-2">
               <li>
-                <a href="#" className="hover:text-white">
+                <a href="/" className="hover:text-white">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white">
+                <a href="/about" className="hover:text-white">
                   About
                 </a>
               </li>
-              
-              
+              {/* Add more links as needed */}
             </ul>
           </div>
 
@@ -48,31 +47,44 @@ function Footer() {
               <br />
               Email: shantibari.feministfactor@gmail.com
               <br />
-              Phone: 
-              01325-167271
+              Phone: 01325-167271
             </p>
+
+            {/* Updated Google Maps iframe */}
+            <div className="mt-4">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.7525685504634!2d90.3673694!3d23.7562013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf50d0b3e65d%3A0x1aea194f96079cd5!2s3%2F1%20Block%20%23%20F%2C%20Dhaka%201205!5e0!3m2!1sen!2sbd!4v1749401385881!5m2!1sen!2sbd"
+                width="100%"
+                height="250"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Shantibari Location on Google Map"
+              ></iframe>
+            </div>
           </div>
         </div>
 
         <div className="border-t border-gray-700 mt-6 pt-6 flex flex-wrap justify-between items-center text-sm">
           {/* Social Media Links */}
           <div className="flex space-x-4">
-            <a href="#" className="hover:text-white">
+            <a href="https://www.facebook.com/shantibari24" target="_blank" rel="noopener noreferrer" className="hover:text-white">
               <i className="fab fa-facebook-f"></i>
             </a>
-            <a href="#" className="hover:text-white">
+            <a href="https://twitter.com/shantibari_bd" target="_blank" rel="noopener noreferrer" className="hover:text-white">
               <i className="fab fa-twitter"></i>
             </a>
-            <a href="#" className="hover:text-white">
+            <a href="https://www.instagram.com/shantibari24" target="_blank" rel="noopener noreferrer" className="hover:text-white">
               <i className="fab fa-instagram"></i>
             </a>
-            <a href="#" className="hover:text-white">
+            <a href="https://www.linkedin.com/in/shantibari-ltd/" target="_blank" rel="noopener noreferrer" className="hover:text-white">
               <i className="fab fa-linkedin-in"></i>
             </a>
           </div>
           {/* Copyright */}
           <p>
-            &copy; {new Date().getFullYear()} Shantibari. All rights reserved.
+            © {new Date().getFullYear()} Shantibari. All rights reserved.
           </p>
         </div>
       </div>
