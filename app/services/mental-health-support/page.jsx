@@ -43,6 +43,11 @@ export async function generateMetadata() {
 }
 
 const MentalHealthSupport = () => {
+  // WhatsApp contact details
+  const whatsappNumber = "8801325167271";
+  const whatsappMessage = "Hello Shantibari Mental Health Support! I need assistance with...";
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
   const teamMembers = [
     {
       name: `Dr. Helal Uddin Ahmed`,
@@ -170,18 +175,19 @@ const MentalHealthSupport = () => {
             empathetic and understanding society.
           </p>
 
-          <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mt-8 rounded-md shadow-md">
-            <p className="text-blue-700 font-semibold">
-              If you're looking for more information or need assistance,{" "}
-              <a
-                href="/contact"
-                className="underline hover:text-blue-900"
-                aria-label="Contact us for mental health support"
-              >
-                feel free to reach out to us
-              </a>
-              .
-            </p>
+          {/* WhatsApp Contact Button */}
+          <div className="mt-10 text-center">
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl mx-auto"
+              aria-label="Contact us via WhatsApp for mental health support"
+            >
+              <i className="fab fa-whatsapp text-2xl mr-2"></i>
+              <span>Get an Appointment</span>
+            </a>
+            
           </div>
         </section>
 
@@ -222,6 +228,44 @@ const MentalHealthSupport = () => {
                   </figure>
                 </article>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* WhatsApp Contact Section */}
+        <section className="max-w-[1440px] mx-auto px-4 py-16">
+          <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-2xl p-8 shadow-xl">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl font-bold text-white mb-4">
+                Get an Appointment
+              </h2>
+              <p className="text-green-100 text-xl mb-8">
+                Our mental health professionals are ready to listen and support you
+              </p>
+              
+              <div className="flex justify-center">
+                <a
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-white text-green-700 font-bold py-4 px-8 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 text-lg"
+                >
+                  <i className="fab fa-whatsapp text-3xl mr-3"></i>
+                  <span>Message Us on WhatsApp</span>
+                </a>
+              </div>
+              
+              <div className="mt-10 p-6 bg-white bg-opacity-20 rounded-xl border border-white border-opacity-30 max-w-2xl mx-auto">
+                <h3 className="font-bold text-gray-900 text-xl mb-4">How to get support:</h3>
+                <ol className="list-decimal list-inside text-left text-gray-800 space-y-2 text-lg">
+                  <li>Click the WhatsApp button above</li>
+                 
+                 <li>Share your concerns in a private conversation</li>
+                  <li>Our professionals will guide you through next steps</li>
+                </ol>
+              </div>
+              
+             
             </div>
           </div>
         </section>
