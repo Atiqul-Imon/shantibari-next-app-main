@@ -1,7 +1,7 @@
 import React from 'react';
 
-function FridaKahloGallery() {
-  // Art image data (28 images), now dynamic and easy to update
+
+
   const artData = [
     {
       image: "https://res.cloudinary.com/db5yniogx/image/upload/v1735385351/Sajj_Dilruba-Papia-835x1024cloud_pjv1wu.jpg",
@@ -244,35 +244,144 @@ function FridaKahloGallery() {
     // Add more art objects as needed...
   ];
 
+   export const metadata = {
+  title: "Color of Her Soul – Art Expo by Shantibari",
+  description: "Explore the vibrant collection of Bangladeshi female artists at Shantibari's Color of Her Soul art exhibition. Discover paintings, mixed media works, and more.",
+  keywords: "Bangladeshi art, female artists, Shantibari art exhibition, contemporary art Bangladesh, art gallery Dhaka",
+  openGraph: {
+    title: "Color of Her Soul – Art Expo by Shantibari",
+    description: "Exhibition featuring works by Bangladeshi female artists",
+    images: [artData[0].image],
+    url: "/gallery-frida-kahlo",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Color of Her Soul – Art Expo by Shantibari",
+    description: "Celebrating Bangladeshi female artists",
+    images: [artData[0].image],
+  },
+};
+
+function FridaKahloGallery() {
+
+const generateStructuredData = () => {
+    const artworkList = artData.map(art => {
+      let offer = {};
+      
+      if (!art.price.includes("Not for Sale")) {
+        const priceMatch = art.price.match(/(\d+(,\d+)*)/);
+        const price = priceMatch ? parseFloat(priceMatch[0].replace(/,/g, '')) : 0;
+        
+        offer = {
+          "@type": "Offer",
+          price: price,
+          priceCurrency: "BDT",
+          availability: "InStock",
+          priceValidUntil: "2025-12-31"
+        };
+      }
+
+      return {
+        "@type": "VisualArtwork",
+        name: art.title,
+        image: art.image,
+        creator: {
+          "@type": "Person",
+          name: art.artist.replace("Artist: ", "")
+        },
+        artMedium: art.medium.replace("Medium: ", ""),
+        size: art.size.replace("Size: ", ""),
+        ...(Object.keys(offer).length > 0 && { offers: offer })
+      };
+    });
+
+    return {
+      "@context": "https://schema.org",
+      "@type": "ArtGallery",
+      name: "Color of Her Soul – Art Expo",
+      description: "Exhibition featuring contemporary artworks by Bangladeshi female artists",
+      url: "/gallery-frida-kahlo",
+      image: artData[0].image,
+      mainEntityOfPage: {
+        "@type": "CollectionPage",
+        hasPart: artworkList
+      }
+    };
+  };
+
+  const structuredData = generateStructuredData();
+
+
   return (
     <div className="w-full bg-gray-100">
+
+       <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+
       {/* Hero Section */}
-      <div className="w-full h-96 bg-gradient-to-r from-blue-500 to-purple-600 text-white flex items-center justify-center">
-        <h1 className="text-5xl font-extrabold text-center">Color of Her Soul – Art Expo by Shantibari</h1>
+         <div className="w-full h-96 bg-gradient-to-r from-blue-500 to-purple-600 text-white flex items-center justify-center">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-center px-4">
+          Color of Her Soul – Art Expo by Shantibari
+        </h1>
       </div>
 
       {/* Art Gallery Section */}
-      <div className="max-w-7xl mx-auto py-12 px-6">
-        <h2 className="text-2xl font-bold mb-6 text-center">Art Gallery</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6">
+        <div className="text-center mb-10">
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+            Featuring contemporary artworks by talented Bangladeshi female artists. 
+            Each piece tells a unique story of culture, identity, and feminine expression.
+          </p>
+        </div>
+        
+        <h2 className="sr-only">Artwork Collection</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {artData.map((art, index) => (
-            <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-              {/* Image with aspect ratio maintained */}
-              <div className="w-full aspect-w-1 aspect-h-1">
+            <article 
+              key={index} 
+              className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow"
+              itemScope
+              itemType="https://schema.org/VisualArtwork"
+            >
+              {/* Image */}
+              <div className="w-full aspect-square">
                 <img
                   src={art.image}
-                  alt={art.title}
+                  alt={`Artwork: ${art.title} by ${art.artist}`}
                   className="object-contain w-full h-full"
+                  itemProp="image"
+                  loading={index > 5 ? "lazy" : "eager"}
                 />
               </div>
-              <div className="p-4">
-                <h3 className="font-bold text-lg mb-2">{art.title}</h3>
-                <p className="text-sm text-gray-600 mb-2">{art.artist}</p>
-                <p className="text-sm text-gray-600 mb-2">{art.price}</p>
-                <p className="text-sm text-gray-600 mb-2">{art.size}</p>
-                <p className="text-sm text-gray-600 mb-2">{art.medium}</p>
+              
+              {/* Art Details */}
+              <div className="p-5">
+                <h3 className="font-bold text-xl mb-2 text-gray-900" itemProp="name">
+                  {art.title}
+                </h3>
+                
+                <div itemProp="creator" itemScope itemType="https://schema.org/Person">
+                  <p className="text-gray-600 mb-2">
+                    <span itemProp="name">{art.artist.replace("Artist: ", "")}</span>
+                  </p>
+                </div>
+                
+                <p className="text-gray-600 mb-2" itemProp="artMedium">
+                  {art.medium}
+                </p>
+                
+                <p className="text-gray-600 mb-2" itemProp="size">
+                  {art.size}
+                </p>
+                
+                <p className="text-gray-800 font-medium mt-3">
+                  {art.price}
+                </p>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
