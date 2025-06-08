@@ -2,6 +2,7 @@
 import React from "react";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 
 function LegalAdviceDetails() {
   return (
@@ -118,6 +119,28 @@ function LegalAdviceDetails() {
                 </h3>
                 <p className="text-gray-600 font-roboto" itemProp="jobTitle">
                   Director, Legal Services
+                </p>
+               
+              </article>
+
+                <article
+                className="w-[300px] p-6 bg-white rounded-lg shadow-lg text-center"
+                itemScope
+                itemType="https://schema.org/Person"
+                
+              >
+                <Image
+                  src="https://res.cloudinary.com/db5yniogx/image/upload/v1740936984/mahjabinrabbani123-removebg-preview_1_kztsra.png"
+                  alt="Mahjabin Rabbani portrait"
+                  width={160}
+                  height={160}
+                  className="rounded-full mx-auto mb-4"
+                />
+                <h3 className="text-xl font-semibold text-gray-800 mb-1" itemProp="name">
+                  Mahjabin Rabbani
+                </h3>
+                <p className="text-gray-600 font-roboto" itemProp="jobTitle">
+                  Advocate, Supreme Court of Bangladesh
                 </p>
               </article>
 
