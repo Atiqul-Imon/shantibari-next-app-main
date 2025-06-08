@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 
 export async function generateMetadata() {
-  const title = "Mental Health Support - Expert Psychiatrists & Counselors";
+  const title = "Mental Health Support - Shantibari";
   const description =
     "Explore our mental health support services with expert psychiatrists, counselors, and therapists dedicated to your well-being. Learn more and reach out for assistance.";
   const url = "https://shantibaribd.org/services/mental-health-support";
