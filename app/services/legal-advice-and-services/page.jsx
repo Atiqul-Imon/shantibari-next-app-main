@@ -1,100 +1,147 @@
+
 import React from "react";
-import Link from "next/link";
+import Head from "next/head";
+import Image from "next/image";
 
 function LegalAdviceDetails() {
   return (
-    <div className="w-full bg-gray-50">
-      {/* Hero Section */}
-      <div className="relative w-full h-[400px]">
-        <img
-          src="https://res.cloudinary.com/db5yniogx/image/upload/v1736942344/legalservicescloud_tm2nqv.jpg" 
-          className="w-full h-full object-cover"
+    <>
+      <Head>
+        <title>Expert Legal Advice & Services | Shantibari Legal Team</title>
+        <meta
+          name="description"
+          content="Access expert legal advice and professional services from our advocates. Get guidance on family law, criminal defense, contracts, and more."
         />
-        <div className="absolute inset-0  bg-opacity-40 flex items-center justify-center">
-          <h1 className="text-white text-4xl font-bold font-playfair">
-            Legal Advice and Services
-          </h1>
-        </div>
-      </div>
+        <meta
+          name="keywords"
+          content="legal advice, legal services, family law, criminal defense, legal consultation, lawyers in Bangladesh, Supreme Court advocates"
+        />
+        <link rel="canonical" href="https://shantibaribd.org/services/legal-advice-and-services" />
+        <meta property="og:title" content="Expert Legal Advice & Services" />
+        <meta
+          property="og:description"
+          content="Connect with top advocates in Bangladesh for trusted legal solutions tailored to your needs."
+        />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/db5yniogx/image/upload/v1736942344/legalservicescloud_tm2nqv.jpg"
+        />
+        <meta property="og:type" content="website" />
+      </Head>
 
-      {/* Description Section */}
-      <div className="max-w-[1440px] mx-auto px-4 py-12">
-        <p className="text-gray-800 font-roboto mb-6 leading-7 text-lg">
-          Legal advice and services play a crucial role in ensuring individuals
-          have access to justice and the protection of their rights within a
-          legal framework. Legal professionals, such as lawyers and attorneys,
-          provide guidance, representation, and expertise in various areas of
-          law to assist individuals, businesses, and organizations in navigating
-          complex legal matters.
-        </p>
-
-        {/* Images in Description */}
-        <div className="flex flex-wrap gap-6 justify-center mb-8">
-          <img
-            src="https://res.cloudinary.com/db5yniogx/image/upload/v1736942344/legalservicescloud_tm2nqv.jpg" // Replace with your image URL
-            alt="Legal Support"
-            className="w-[45%] rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl"
+      <main className="w-full bg-gray-50">
+        {/* Hero Section */}
+        <section className="relative w-full h-[400px]">
+          <Image
+            src="https://res.cloudinary.com/db5yniogx/image/upload/v1736942344/legalservicescloud_tm2nqv.jpg"
+            alt="Legal services hero background"
+            layout="fill"
+            objectFit="cover"
+            className="z-0"
           />
-          <img
-            src="https://res.cloudinary.com/db5yniogx/image/upload/v1736942110/legalserviceimagecloud_wzeumb.jpg" // Replace with your image URL
-            alt="Consultation"
-            className="w-[45%] rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl"
-          />
-        </div>
+          <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center z-10">
+            <h1 className="text-white text-4xl font-bold font-playfair text-center">
+              Legal Advice and Services
+            </h1>
+          </div>
+        </section>
 
-        <p className="text-gray-800 font-roboto leading-7 text-lg">
-          One of the primary functions of legal advice is to help individuals
-          understand their rights and obligations under the law. Legal
-          professionals assess specific situations, interpret relevant laws, and
-          provide advice on the best course of action. Whether it’s personal
-          matters like family law, estate planning, or criminal defense, or
-          business-related issues like contracts, intellectual property, or
-          employment law, seeking legal advice can help individuals make
-          informed decision and mitigate potential risks.
-        </p>
-      </div>
+        {/* Description Section */}
+        <section className="max-w-[1440px] mx-auto px-4 py-12">
+          <article>
+            <p className="text-gray-800 font-roboto mb-6 leading-7 text-lg">
+              Legal advice and services are essential for ensuring justice,
+              protecting rights, and navigating the legal system. Legal
+              professionals such as attorneys and advocates offer representation
+              and guidance in various fields including family law, business law,
+              and criminal justice.
+            </p>
 
-      {/* Our Lawyers Section */}
-      <div className="bg-gray-100 py-12">
-        <div className="max-w-[1440px] mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center font-playfair text-gray-800">
-            Meet Our Lawyers
-          </h2>
-
-          <div className="flex flex-wrap justify-center gap-6">
-            {/* Lawyer Card 1 */}
-            <div className="w-[300px] p-6 bg-white rounded-lg shadow-lg text-center">
-              <img
-                src="https://res.cloudinary.com/db5yniogx/image/upload/v1735494831/nahidshamsshantibaricloud_wqbzwp.jpg" // Replace with the lawyer's image URL
-                alt="Adv. Nahid Shams"
-                className="w-40 h-40 rounded-full mx-auto mb-4"
+            <div className="flex flex-wrap gap-6 justify-center mb-8">
+              <Image
+                src="https://res.cloudinary.com/db5yniogx/image/upload/v1736942344/legalservicescloud_tm2nqv.jpg"
+                alt="Lawyer giving legal support"
+                width={500}
+                height={300}
+                className="rounded-lg shadow-lg hover:scale-105 transition-transform"
               />
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                Adv. Nahid Shams
-              </h3>
-              <p className="text-gray-600 font-roboto">
-                Advocate, Supreme Court of Bangladesh
-              </p>
+              <Image
+                src="https://res.cloudinary.com/db5yniogx/image/upload/v1736942110/legalserviceimagecloud_wzeumb.jpg"
+                alt="Legal consultation session"
+                width={500}
+                height={300}
+                className="rounded-lg shadow-lg hover:scale-105 transition-transform"
+              />
             </div>
 
-            {/* Lawyer Card 2 */}
-            <div className="w-[300px] p-6 bg-white rounded-lg shadow-lg text-center">
-              <img
-                src="https://res.cloudinary.com/db5yniogx/image/upload/v1735314212/Adv-Fahriya-Ferdousecloud_sk71zm.jpg" // Replace with the lawyer's image URL
-                alt="Adv. Fahriya Ferdous"
-                className="w-40 h-40 rounded-full mx-auto mb-4"
-              />
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                Adv. Fahriya Ferdous
-              </h3>
-              <p className="text-gray-600 font-roboto">
-                Advocate, Supreme Court of Bangladesh
+            <p className="text-gray-800 font-roboto leading-7 text-lg">
+              Whether it's drafting contracts, defending in court, or helping
+              with inheritance planning, legal counsel ensures you make informed
+              decisions and avoid costly mistakes. Our lawyers offer tailored
+              support and understand the nuances of Bangladeshi law.
+            </p>
+          </article>
+        </section>
+
+        {/* Our Lawyers Section */}
+        <section className="bg-gray-100 py-12">
+          <div className="max-w-[1440px] mx-auto px-4">
+            <header className="mb-8 text-center">
+              <h2 className="text-3xl font-bold font-playfair text-gray-800">
+                Meet Our Lawyers
+              </h2>
+              <p className="text-gray-600 text-lg mt-2">
+                Experienced advocates ready to serve your legal needs.
               </p>
+            </header>
+
+            <div className="flex flex-wrap justify-center gap-6">
+              {/* Lawyer Card 1 */}
+              <article
+                className="w-[300px] p-6 bg-white rounded-lg shadow-lg text-center"
+                itemScope
+                itemType="https://schema.org/Person"
+              >
+                <Image
+                  src="https://res.cloudinary.com/db5yniogx/image/upload/v1735494831/nahidshamsshantibaricloud_wqbzwp.jpg"
+                  alt="Advocate Nahid Shams portrait"
+                  width={160}
+                  height={160}
+                  className="rounded-full mx-auto mb-4"
+                />
+                <h3 className="text-xl font-semibold text-gray-800 mb-1" itemProp="name">
+                  Adv. Nahid Shams
+                </h3>
+                <p className="text-gray-600 font-roboto" itemProp="jobTitle">
+                  Director, Legal Services
+                </p>
+              </article>
+
+              {/* Lawyer Card 2 */}
+              <article
+                className="w-[300px] p-6 bg-white rounded-lg shadow-lg text-center"
+                itemScope
+                itemType="https://schema.org/Person"
+              >
+                <Image
+                  src="https://res.cloudinary.com/db5yniogx/image/upload/v1735314212/Adv-Fahriya-Ferdousecloud_sk71zm.jpg"
+                  alt="Advocate Fahriya Ferdous portrait"
+                  width={160}
+                  height={160}
+                  className="rounded-full mx-auto mb-4"
+                />
+                <h3 className="text-xl font-semibold text-gray-800 mb-1" itemProp="name">
+                  Adv. Fahriya Ferdous
+                </h3>
+                <p className="text-gray-600 font-roboto" itemProp="jobTitle">
+                  Advocate, Supreme Court of Bangladesh
+                </p>
+              </article>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
+        </section>
+      </main>
+    </>
   );
 }
 

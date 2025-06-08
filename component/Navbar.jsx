@@ -13,7 +13,7 @@ const Navbar = () => {
 
   const menuItems = [
     { path: '/', label: 'Home' },
-    { path: '/about', label: 'About Us' },
+    { path: '/about-us', label: 'About Us' },
     { path: '/services', label: 'Services' },
     { path: '/events', label: 'Events' },
     { path: '/gallery-frida-kahlo', label: 'Gallery Frida Kahlo' },

@@ -5,25 +5,64 @@ import Head from 'next/head';
 
 const AboutUs = () => {
   return (
-    <div>
+    <>
       <Head>
-        <title>About Us - Shantibari</title>
-        <meta name="description" content="Empowering women in Bangladesh through comprehensive support programs" />
-        <meta property="og:title" content="About Shantibari | Women Empowerment Organization" />
-        <meta property="og:description" content="Discover our mission to support women through mental health services and entrepreneurship programs" />
+        <title>About Us | Shantibari - Empowering Women in Bangladesh</title>
+        <meta name="description" content="Empowering women in Bangladesh through comprehensive support programs." />
+        <link rel="canonical" href="https://shantibaribd.org/about-us" />
+
+        {/* Open Graph Meta */}
+        <meta property="og:title" content="About Shantibari | Empowering Women in Bangladesh" />
+        <meta property="og:description" content="Learn about Shantibari's mission to empower women through mental health support, legal aid, and business support programs." />
         <meta property="og:image" content="https://res.cloudinary.com/db5yniogx/image/upload/v1737380953/sbarioglogo_snkepr.png" />
         <meta property="og:url" content="https://shantibaribd.org/about-us" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Card Meta */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Us | Shantibari" />
+        <meta name="twitter:description" content="Discover how Shantibari supports women in Bangladesh with mental health and business empowerment programs." />
+        <meta name="twitter:image" content="https://res.cloudinary.com/db5yniogx/image/upload/v1737380953/sbarioglogo_snkepr.png" />
+
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Shantibari",
+              "url": "https://shantibaribd.org",
+              "logo": "https://res.cloudinary.com/db5yniogx/image/upload/v1737380953/sbarioglogo_snkepr.png",
+              "sameAs": [
+                "https://www.facebook.com/shantibari24",
+                "https://www.instagram.com/shantibari24"
+              ],
+              "description": "Shantibari is a women's empowerment organization in Bangladesh offering mental health support, legal aid, and entrepreneurship programs.",
+              "foundingDate": "2022-07",
+              "founder": {
+                "@type": "Organization",
+                "name": "Feminist Factor"
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Dhaka",
+                "addressCountry": "Bangladesh"
+              }
+            }),
+          }}
+        />
       </Head>
 
-      {/* Hero Banner */}
+      {/* Hero Section */}
       <section
         className="relative h-[450px] bg-center bg-cover flex items-center justify-center text-center"
         style={{
           backgroundImage: `url('https://res.cloudinary.com/db5yniogx/image/upload/v1735340419/aboutuscloudinary_si2umb.jpg')`,
         }}
       >
-        <div className="absolute inset-0 bg-opacity-600" />
-        <div className="relative z-10 text-white px-4">
+        <div className="absolute inset-0" />
+        <div className="relative z-10 text-white border-2 border-white p-1 backdrop-blur-md px-4 py-4">
           <h1 className="text-4xl md:text-6xl font-extrabold uppercase tracking-wide drop-shadow-lg">
             About Us
           </h1>
@@ -45,21 +84,12 @@ const AboutUs = () => {
           </div>
           <div className="md:col-span-2 space-y-6">
             <p className="text-lg text-gray-800 leading-relaxed">
-              Shantibari is a women’s organization, based in Dhaka, Bangladesh,
-              which aims to empower women through its multifaceted activities.
-              Founded in July 2022 as a sister concern of Feminist Factor
-              (2020), Shantibari has been committed to helping women in diverse
-              ways, i.e. mental health and legal support, reinforcing
-              information services, and supporting women-led entrepreneurship,
-              etc.
+              Shantibari is a women’s organization, based in Dhaka, Bangladesh, which aims to empower women through its multifaceted activities. Founded in July 2022 as a sister concern of Feminist Factor (2020), Shantibari has been committed to helping women in diverse ways, i.e., mental health and legal support, reinforcing information services, and supporting women-led entrepreneurship, etc.
             </p>
             <div>
               <h2 className="text-xl font-semibold text-gray-900 mb-2">Company Culture</h2>
               <p className="text-gray-800">
-                At Shantibari, we value innovation, teamwork, and client
-                satisfaction. We foster a safe, healthy, and collaborative work
-                environment where employees are encouraged to share ideas and
-                support each other in attaining our goals.
+                At Shantibari, we value innovation, teamwork, and client satisfaction. We foster a safe, healthy, and collaborative work environment where employees are encouraged to share ideas and support each other in attaining our goals.
               </p>
             </div>
           </div>
@@ -108,7 +138,7 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 
