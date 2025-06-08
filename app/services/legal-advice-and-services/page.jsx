@@ -39,10 +39,14 @@ function LegalAdviceDetails() {
             objectFit="cover"
             className="z-0"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center z-10">
-            <h1 className="text-white text-4xl font-bold font-playfair text-center">
+          <div className="absolute inset-0  flex items-center justify-center z-10 border-2">
+           
+           <div className="border-2 border-white p-1 backdrop-blur-md">
+                <h1 className="text-white text-4xl font-bold font-playfair text-center">
               Legal Advice and Services
             </h1>
+           </div>
+          
           </div>
         </section>
 
