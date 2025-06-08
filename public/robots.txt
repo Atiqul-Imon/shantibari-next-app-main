@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://shantibaribd.org
+
+# Sitemaps
+Sitemap: https://shantibaribd.org/sitemap.xml
