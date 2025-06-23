@@ -15,8 +15,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Shantibari",
-  description: "Shantibari is a women’s organization, based in Dhaka, Bangladesh",
+  metadataBase: new URL("https://shantibaribd.org"),
+  title: {
+    default: "Shantibari - Empowering Women in Bangladesh",
+    template: `%s | Shantibari`,
+  },
+  description: "Shantibari is a women's organization, based in Dhaka, Bangladesh, empowering women through mental health support, legal aid, and entrepreneurial programs.",
 };
 
 export default function RootLayout({ children }) {

@@ -88,47 +88,69 @@ const MentalHealthSupport = () => {
   ];
 
   // JSON-LD structured data
-  const jsonLd = {
+  const serviceJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Shantibari",
-    url: "https://shantibaribd.org/",
-    logo:
-      "https://res.cloudinary.com/db5yniogx/image/upload/v1736272011/mentalhealthSupportHeroImagecloud_ywnd3h_i08dbd.jpg",
-    sameAs: [
-      "https://www.facebook.com/shantibari24",
-      "https://www.instagram.com/shantibari24",
-       "https://www.linkedin.com/in/shantibari-ltd/"
-    ],
-    department: {
-      "@type": "Mental Health Support Service",
-      name: "Shantibari Mental Health Support Service",
-      member: teamMembers.map((member) => ({
-        "@type": "Person",
-        name: member.name,
-        jobTitle: member.role,
-        image: member.image,
-      })),
+    "@type": "Service",
+    "serviceType": "Mental Health Support",
+    "provider": {
+      "@type": "Organization",
+      "name": "Shantibari",
+      "url": "https://shantibaribd.org"
     },
+    "name": "Mental Health Support",
+    "description": "Expert psychiatric, counseling, and therapy services for women's well-being.",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Bangladesh"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Mental Health Services",
+      "itemListElement": teamMembers.map(member => ({
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": `${member.role} - ${member.name}`
+        }
+      }))
+    }
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://shantibaribd.org"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://shantibaribd.org/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Mental Health Support",
+        "item": "https://shantibaribd.org/services/mental-health-support"
+      }
+    ]
   };
 
   return (
     <>
-      <Head>
-        {/* Viewport meta tag for responsive design */}
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* Canonical link */}
-        <link
-          rel="canonical"
-          href="https://shantibaribd.org/services/mental-health-support"
-        />
-        {/* JSON-LD structured data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </Head>
-
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <div className="bg-gray-50">
         {/* Hero Section */}
         <section

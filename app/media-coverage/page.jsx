@@ -1,5 +1,39 @@
 import React from 'react';
 
+export const metadata = {
+  title: "Media Coverage - Shantibari",
+  description: "See Shantibari featured in the media. Explore articles and videos from Prothom Alo, Haal Fashion, BBarta24, and more.",
+  keywords: "Shantibari media, press coverage, news features, women empowerment media, Shantibari news",
+  
+  alternates: {
+    canonical: "https://shantibaribd.org/media-coverage",
+  },
+  
+  openGraph: {
+    title: "Media Coverage - Shantibari",
+    description: "Explore our features in various national media outlets and our video coverage.",
+    images: [
+      {
+        url: "https://res.cloudinary.com/db5yniogx/image/upload/v1735381653/mediacoveragecloud4_cdvffm.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Shantibari Media Coverage",
+      },
+    ],
+    url: "https://shantibaribd.org/media-coverage",
+    type: "website",
+    locale: "en_BD",
+  },
+  
+  twitter: {
+    card: "summary_large_image",
+    title: "Media Coverage - Shantibari",
+    description: "Check out Shantibari's features in the press and on YouTube.",
+    images: ["https://res.cloudinary.com/db5yniogx/image/upload/v1735381653/mediacoveragecloud4_cdvffm.jpg"],
+    site: "@shantibari_bd",
+  },
+};
+
 function MediaCoverage() {
   // Media coverage data
   const mediaCoverageData = [
@@ -35,7 +69,7 @@ function MediaCoverage() {
 }, 
 {
     image: 'https://images.prothomalo.com/prothomalo-bangla%2F2023-07%2Fe7e77150-59c2-450c-92fc-594db957fa43%2Fshantib_2.jpg?rect=0%2C0%2C732%2C976&auto=format%2Ccompress&fmt=webp&format=webp&w=1000&dpr=1.0', 
-    title: `শান্তিবাড়ির ‘ভালো থাকার উৎসব’`, 
+    title: `শান্তিবাড়ির 'ভালো থাকার উৎসব'`, 
     media: 'haal.fashion',
     link: 'https://www.haal.fashion/fashion/wb4icmgy9v'
 },
@@ -65,13 +99,13 @@ function MediaCoverage() {
 },
 {
     image: 'https://images.prothomalo.com/prothomalo-bangla%2F2024-02%2F0a71e6b3-3f21-4482-8ba4-40e2bb4ac7f4%2Fboshontomelashantibari1.jpg?rect=0%2C0%2C780%2C1040&auto=format%2Ccompress&fmt=webp&format=webp&w=1000&dpr=1.0', 
-    title: `শান্তিবাড়িতে কাল থেকে ‘দেখা পেলেম ফাল্গুনে’`, 
+    title: `শান্তিবাড়িতে কাল থেকে 'দেখা পেলেম ফাল্গুনে'`, 
     media: 'haal.fashion',
     link: 'https://www.haal.fashion/arrangement/event/zoo6koizjr'
 },
 {
     image: 'https://www.bbarta24.net/assets/news_photos/2024/02/01/image-257843.jpg', 
-    title: `বসন্ত উদযাপনে শান্তিবাড়ির ‘দেখা পেলেম ফাল্গুনে’`, 
+    title: `বসন্ত উদযাপনে শান্তিবাড়ির 'দেখা পেলেম ফাল্গুনে'`, 
     media: 'bbarta24',
     link: 'https://www.bbarta24.net/life-style/257843'
 },

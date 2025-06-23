@@ -1,58 +1,56 @@
-'use client';
-
 import React from 'react';
-import Head from 'next/head';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Shantibari",
+  "url": "https://shantibaribd.org",
+  "logo": "https://res.cloudinary.com/db5yniogx/image/upload/v1737380953/sbarioglogo_snkepr.png",
+  "sameAs": [
+    "https://www.facebook.com/shantibari24",
+    "https://www.instagram.com/shantibari24"
+  ],
+  "description": "Shantibari is a women's empowerment organization in Bangladesh offering mental health support, legal aid, and entrepreneurship programs.",
+  "foundingDate": "2022-07",
+  "founder": {
+    "@type": "Organization",
+    "name": "Feminist Factor"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Dhaka",
+    "addressCountry": "Bangladesh"
+  }
+};
+
+export const metadata = {
+  title: "About Us",
+  description: "Learn about Shantibari's mission to empower women in Bangladesh through comprehensive support programs including mental health, legal aid, and entrepreneurship.",
+  alternates: {
+    canonical: "https://shantibaribd.org/about-us",
+  },
+  openGraph: {
+    title: "About Shantibari | Empowering Women in Bangladesh",
+    description: "Learn about Shantibari's mission to empower women through mental health support, legal aid, and business support programs.",
+    images: "https://res.cloudinary.com/db5yniogx/image/upload/v1737380953/sbarioglogo_snkepr.png",
+    url: "https://shantibaribd.org/about-us",
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us | Shantibari",
+    description: "Discover how Shantibari supports women in Bangladesh with mental health and business empowerment programs.",
+    images: "https://res.cloudinary.com/db5yniogx/image/upload/v1737380953/sbarioglogo_snkepr.png"
+  },
+};
 
 const AboutUs = () => {
   return (
     <>
-      <Head>
-        <title>About Us | Shantibari - Empowering Women in Bangladesh</title>
-        <meta name="description" content="Empowering women in Bangladesh through comprehensive support programs." />
-        <link rel="canonical" href="https://shantibaribd.org/about-us" />
-
-        {/* Open Graph Meta */}
-        <meta property="og:title" content="About Shantibari | Empowering Women in Bangladesh" />
-        <meta property="og:description" content="Learn about Shantibari's mission to empower women through mental health support, legal aid, and business support programs." />
-        <meta property="og:image" content="https://res.cloudinary.com/db5yniogx/image/upload/v1737380953/sbarioglogo_snkepr.png" />
-        <meta property="og:url" content="https://shantibaribd.org/about-us" />
-        <meta property="og:type" content="website" />
-
-        {/* Twitter Card Meta */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="About Us | Shantibari" />
-        <meta name="twitter:description" content="Discover how Shantibari supports women in Bangladesh with mental health and business empowerment programs." />
-        <meta name="twitter:image" content="https://res.cloudinary.com/db5yniogx/image/upload/v1737380953/sbarioglogo_snkepr.png" />
-
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "Shantibari",
-              "url": "https://shantibaribd.org",
-              "logo": "https://res.cloudinary.com/db5yniogx/image/upload/v1737380953/sbarioglogo_snkepr.png",
-              "sameAs": [
-                "https://www.facebook.com/shantibari24",
-                "https://www.instagram.com/shantibari24"
-              ],
-              "description": "Shantibari is a women's empowerment organization in Bangladesh offering mental health support, legal aid, and entrepreneurship programs.",
-              "foundingDate": "2022-07",
-              "founder": {
-                "@type": "Organization",
-                "name": "Feminist Factor"
-              },
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Dhaka",
-                "addressCountry": "Bangladesh"
-              }
-            }),
-          }}
-        />
-      </Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       {/* Hero Section */}
       <section
@@ -84,7 +82,7 @@ const AboutUs = () => {
           </div>
           <div className="md:col-span-2 space-y-6">
             <p className="text-lg text-gray-800 leading-relaxed">
-              Shantibari is a women’s organization, based in Dhaka, Bangladesh, which aims to empower women through its multifaceted activities. Founded in July 2022 as a sister concern of Feminist Factor (2020), Shantibari has been committed to helping women in diverse ways, i.e., mental health and legal support, reinforcing information services, and supporting women-led entrepreneurship, etc.
+              Shantibari is a women's organization, based in Dhaka, Bangladesh, which aims to empower women through its multifaceted activities. Founded in July 2022 as a sister concern of Feminist Factor (2020), Shantibari has been committed to helping women in diverse ways, i.e., mental health and legal support, reinforcing information services, and supporting women-led entrepreneurship, etc.
             </p>
             <div>
               <h2 className="text-xl font-semibold text-gray-900 mb-2">Company Culture</h2>

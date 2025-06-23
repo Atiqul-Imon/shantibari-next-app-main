@@ -36,18 +36,55 @@ export const metadata = {
 };
 
 function LegalAdviceDetails() {
-  const jsonLd = {
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://shantibaribd.org"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://shantibaribd.org/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Legal Advice and Services",
+        "item": "https://shantibaribd.org/services/legal-advice-and-services"
+      }
+    ]
+  };
+
+  const legalServiceJsonLd = {
     "@context": "https://schema.org",
     "@type": "LegalService",
-    "name": "Legal Advice and Services - Shantibari",
-    "description": "Professional legal services by top lawyers in Bangladesh",
+    "name": "Legal Advice and Services at Shantibari",
+    "description": "Professional legal services by top lawyers in Bangladesh, specializing in family law, criminal defense, and more.",
     "url": "https://shantibaribd.org/services/legal-advice-and-services",
-    "telephone": "+880 1325-167271",
-    "areaServed": "Bangladesh",
-    "offers": {
-      "@type": "Offer",
-      "name": "Legal Consultation",
-      "price": "Varies"
+    "telephone": "+8801325167271",
+    "provider": {
+      "@type": "Organization",
+      "name": "Shantibari",
+      "url": "https://shantibaribd.org"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Bangladesh"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Legal Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Family Law Consultation" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Criminal Defense" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contract Drafting" } }
+      ]
     },
     "image": "https://res.cloudinary.com/db5yniogx/image/upload/v1736942344/legalservicescloud_tm2nqv.jpg",
     "sameAs": [
@@ -60,7 +97,7 @@ function LegalAdviceDetails() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbJsonLd, legalServiceJsonLd]) }}
       />
 
       <main className="w-full bg-gray-50">

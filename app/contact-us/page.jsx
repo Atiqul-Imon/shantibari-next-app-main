@@ -1,5 +1,39 @@
 import React from 'react';
 
+export const metadata = {
+  title: "Contact Us - Shantibari",
+  description: "Get in touch with Shantibari. Find our address, phone number, email, and a map to our location in Dhaka, Bangladesh. Message us on WhatsApp for a quick response.",
+  keywords: "contact Shantibari, Shantibari address, Shantibari phone number, women's organization Dhaka, contact us",
+  
+  alternates: {
+    canonical: "https://shantibaribd.org/contact-us",
+  },
+  
+  openGraph: {
+    title: "Contact Us - Shantibari",
+    description: "Reach out to Shantibari for support and inquiries. Find our contact details and location.",
+    images: [
+      {
+        url: "https://res.cloudinary.com/db5yniogx/image/upload/v1735340419/aboutuscloudinary_si2umb.jpg", // A relevant image for contact/about us
+        width: 1200,
+        height: 630,
+        alt: "Contact Shantibari",
+      },
+    ],
+    url: "https://shantibaribd.org/contact-us",
+    type: "website",
+    locale: "en_BD",
+  },
+  
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us - Shantibari",
+    description: "Contact details for Shantibari, a women's empowerment organization in Dhaka.",
+    images: ["https://res.cloudinary.com/db5yniogx/image/upload/v1735340419/aboutuscloudinary_si2umb.jpg"],
+    site: "@shantibari_bd",
+  },
+};
+
 const ContactUs = () => {
   // WhatsApp phone number in international format (without spaces or special characters)
   const whatsappNumber = "8801325167271";

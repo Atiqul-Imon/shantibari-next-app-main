@@ -1,5 +1,39 @@
 import React from "react";
 
+export const metadata = {
+  title: "Parenting Support - Shantibari",
+  description: "Shantibari offers expert parenting support and child development consultations. Schedule a session with our experienced consultants to ensure the best outcomes for your family.",
+  keywords: "parenting support Bangladesh, child development, parenting consultation Dhaka, family support services, child well-being",
+  
+  alternates: {
+    canonical: "https://shantibaribd.org/services/parenting-support",
+  },
+  
+  openGraph: {
+    title: "Parenting Support - Shantibari",
+    description: "Expert consultations on parenting and child development for families in Bangladesh.",
+    images: [
+      {
+        url: "https://res.cloudinary.com/db5yniogx/image/upload/v1736946117/parent_hl9ibo.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Parenting Support at Shantibari",
+      },
+    ],
+    url: "https://shantibaribd.org/services/parenting-support",
+    type: "website",
+    locale: "en_BD",
+  },
+  
+  twitter: {
+    card: "summary_large_image",
+    title: "Parenting Support - Shantibari",
+    description: "Get expert advice on parenting and child development from Shantibari's experienced consultants.",
+    images: ["https://res.cloudinary.com/db5yniogx/image/upload/v1736946117/parent_hl9ibo.jpg"],
+    site: "@shantibari_bd",
+  },
+};
+
 function ParentingSupportDetails() {
   return (
     <div className="w-full bg-gray-50">
@@ -38,9 +72,9 @@ function ParentingSupportDetails() {
         </div>
         <div className="bg-white rounded-lg shadow-md p-8">
           <p className="text-gray-700 font-roboto leading-8 text-lg mb-6">
-            For Women, one of the additional services at the “Shantibari” is
+            For Women, one of the additional services at the "Shantibari" is
             Child development and Parenting Consultation. Shantibari is eager to
-            provide every essential service needed at every stage of a woman’s
+            provide every essential service needed at every stage of a woman's
             life. The organization places great importance on the role of both
             parents, especially for the development of the child. Shantibari
             offers assistance and advice to parents.

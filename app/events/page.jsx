@@ -1,5 +1,38 @@
 import React from "react";
 
+export const metadata = {
+  title: "Events - Shantibari",
+  description: "Join our events at Shantibari. From parenting sessions and art exhibitions to entrepreneurial fairs, find an event that empowers and inspires.",
+  keywords: "Shantibari events, women's events Dhaka, parenting sessions, art exhibitions Bangladesh, entrepreneurial fairs, cultural events",
+  
+  alternates: {
+    canonical: "https://shantibaribd.org/events",
+  },
+  
+  openGraph: {
+    title: "Events at Shantibari",
+    description: "Explore past and upcoming events at Shantibari, a hub for women's empowerment and community engagement.",
+    images: [
+      {
+        url: "https://res.cloudinary.com/db5yniogx/image/upload/v1735340419/aboutuscloudinary_si2umb.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Events at Shantibari",
+      },
+    ],
+    url: "https://shantibaribd.org/events",
+    type: "website",
+    locale: "en_BD",
+  },
+  
+  twitter: {
+    card: "summary_large_image",
+    title: "Shantibari Events",
+    description: "Discover empowering events for women at Shantibari.",
+    images: ["https://res.cloudinary.com/db5yniogx/image/upload/v1735340419/aboutuscloudinary_si2umb.jpg"],
+    site: "@shantibari_bd",
+  },
+};
 
 const Event = () => {
   return (

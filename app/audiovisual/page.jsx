@@ -1,5 +1,39 @@
 import React from "react";
 
+export const metadata = {
+  title: "Audio-Visual Gallery - Shantibari",
+  description: "Explore the audio-visual gallery of Shantibari, featuring videos from our Facebook and YouTube channels. See our events, interviews, and more.",
+  keywords: "Shantibari video gallery, audio-visual content, women empowerment videos, Bangladesh events, Shantibari YouTube, Shantibari Facebook",
+  
+  alternates: {
+    canonical: "https://shantibaribd.org/audiovisual",
+  },
+  
+  openGraph: {
+    title: "Audio-Visual Gallery - Shantibari",
+    description: "Watch videos from our events, workshops, and interviews.",
+    images: [
+      {
+        url: "https://res.cloudinary.com/db5yniogx/image/upload/v1735381653/mediacoveragecloud4_cdvffm.jpg", // A relevant image for the gallery
+        width: 1200,
+        height: 630,
+        alt: "Shantibari Audio-Visual Gallery",
+      },
+    ],
+    url: "https://shantibaribd.org/audiovisual",
+    type: "website",
+    locale: "en_BD",
+  },
+  
+  twitter: {
+    card: "summary_large_image",
+    title: "Audio-Visual Gallery - Shantibari",
+    description: "Explore videos from Shantibari's events and initiatives.",
+    images: ["https://res.cloudinary.com/db5yniogx/image/upload/v1735381653/mediacoveragecloud4_cdvffm.jpg"],
+    site: "@shantibari_bd",
+  },
+};
+
 const AudioVisual = () => {
   return (
     <div className="min-h-screen bg-gray-100 py-12 px-6">

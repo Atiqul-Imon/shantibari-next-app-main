@@ -1,14 +1,46 @@
 import React from 'react';
 
+export const metadata = {
+  title: "Frida Kahlo Art Gallery - Shantibari",
+  description: "Explore the Frida Kahlo Art Gallery at Shantibari. Discover beautiful paintings from talented artists like Dilruba Papia, Lubna Habib, and more.",
+  keywords: "Frida Kahlo gallery, Shantibari art gallery, women artists Bangladesh, contemporary art Dhaka, oil painting, acrylic on canvas",
+  
+  alternates: {
+    canonical: "https://shantibaribd.org/gallery-frida-kahlo",
+  },
+  
+  openGraph: {
+    title: "Frida Kahlo Art Gallery - Shantibari",
+    description: "Discover a curated collection of art by talented female artists at the Shantibari gallery.",
+    images: [
+      {
+        url: "https://res.cloudinary.com/db5yniogx/image/upload/v1735389656/frida-kahlo-in-blue-satin-blouse_u988dl.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Frida Kahlo Art Gallery at Shantibari",
+      },
+    ],
+    url: "https://shantibaribd.org/gallery-frida-kahlo",
+    type: "website",
+    locale: "en_BD",
+  },
+  
+  twitter: {
+    card: "summary_large_image",
+    title: "Frida Kahlo Art Gallery - Shantibari",
+    description: "A celebration of female artists at the Shantibari Frida Kahlo Art Gallery.",
+    images: ["https://res.cloudinary.com/db5yniogx/image/upload/v1735389656/frida-kahlo-in-blue-satin-blouse_u988dl.jpg"],
+    site: "@shantibari_bd",
+  },
+};
 
-
-  const artData = [
+const artData = [
     {
       image: "https://res.cloudinary.com/db5yniogx/image/upload/v1735385351/Sajj_Dilruba-Papia-835x1024cloud_pjv1wu.jpg",
       title: "সাঁজ",
       artist: "Artist: Dilruba Papia",
       price: "Price: 75000 (BDT)",
-      size: "Size:  3’/3’7”",
+      size: "Size:  3'/3'7\"",
       medium: "Medium: Oil Painting"
     },
     {
@@ -16,7 +48,7 @@ import React from 'react';
       title: "তুমি",
       artist: "Artist: Dilruba Papia",
       price: "Price: 75000 (BDT)",
-      size: "Size: 3’/3’7”",
+      size: "Size: 3'/3'7\"",
       medium: "Medium: Oil Painting"
     },
     {
@@ -24,7 +56,7 @@ import React from 'react';
       title: "Beyond the Sky, Out of the Blue:01",
       artist: "Artist: Lubna Habib",
       price: "Price: 25000 (BDT)",
-      size: "Size: 2’/2’",
+      size: "Size: 2'/2'",
       medium: "Medium: Acrylic on Canvas"
     },
     {
@@ -32,7 +64,7 @@ import React from 'react';
       title: "Beyond the Sky, Out of the Blue:02",
       artist: "Artist: Lubna Habib",
       price: "Price: 25000 (BDT)",
-      size: "Size: 2’/2’",
+      size: "Size: 2'/2'",
       medium: "Medium: Acrylic on Canvas"
     },
     {
@@ -40,28 +72,25 @@ import React from 'react';
       title: "Magnolias Around A Bomb",
       artist: "Artist: Lubna Habib",
       price: "Price: 30000 (BDT)",
-      size: "Size: 20” × 24”",
+      size: "Size: 20\" × 24\"",
       medium: "Medium: Acrylic on Canvas"
     },
-
     {
       image: "https://res.cloudinary.com/db5yniogx/image/upload/v1735386392/%E0%A6%B8%E0%A7%82%E0%A6%B0%E0%A7%8D%E0%A6%AF%E0%A7%87-%E0%A6%AC%E0%A7%87%E0%A6%81%E0%A6%9A%E0%A7%87-%E0%A6%A5%E0%A6%BE%E0%A6%95%E0%A6%BF_Fuleshwary-Priyanandini-768x1214_cnz27d.jpg",
       title: "সূর্যে বেঁচে থাকি",
       artist: "Artist: Fuleshwary Priya nandini",
       price: "Price: 20000 (BDT)",
-      size: "Size: 20” × 11”",
+      size: "Size: 20\" × 11\"",
       medium: "Medium: Mixed Media"
     },
-
     {
       image: "https://res.cloudinary.com/db5yniogx/image/upload/v1735386513/%E0%A6%B8%E0%A7%8D%E0%A6%AC%E0%A6%AA%E0%A7%8D%E0%A6%A8%E0%A7%87%E0%A6%B0-%E0%A6%A7%E0%A7%8D%E0%A6%AC%E0%A6%A8%E0%A6%BF%E0%A6%B0%E0%A6%BE_Fuleshwary-Priyanandini_uswsnb.jpg",
       title: "স্বপ্নের ধ্বনিরা",
       artist: "Artist: Fuleshwary Priya nandini",
       price: "Price: 18000 (BDT)",
-      size: "Size: 19” × 15”",
+      size: "Size: 19\" × 15\"",
       medium: "Medium: Mixed Media"
     },
-
     {
       image: "https://res.cloudinary.com/db5yniogx/image/upload/v1735386734/Poetry-of-the-Forest-1_Monidipa-Dasgupta-771x1024_diqgeh.jpg",
       title: "Poetry of the Forest 1",
@@ -70,7 +99,6 @@ import React from 'react';
       size: "Size: 28 x 36cm",
       medium: "Medium: Acrylic and Pen on Paper"
     },
-
     {
       image: "https://res.cloudinary.com/db5yniogx/image/upload/v1735386873/Poetry-of-the-Forest-2_Monidipa-Dasgupta-775x1024_bou5n8.webp",
       title: `Poetry of the Forest 2`,
@@ -79,85 +107,76 @@ import React from 'react';
       size: "Size: 28 x 36 cm",
       medium: "Medium: Acrylic and Pen on Paper"
     },
-
     {
       image: "https://res.cloudinary.com/db5yniogx/image/upload/v1735387060/Color-of-Nature_Mahjabin-Moitry-768x650_jgpdqr.jpg",
       title: "Colour of Nature",
       artist: "Artist: Mahjabin Rahim Moitri",
       price: "Price: 20000 (BDT)",
-      size: "Size: 36”/24”",
+      size: "Size: 36\"/24\"",
       medium: "Medium: Mixed Media"
     },
-
     {
       image: "https://res.cloudinary.com/db5yniogx/image/upload/v1735387176/Wings_Mahjabin-Moitry-768x603_dux6em.jpg",
       title: "Wings",
       artist: "Artist: Mahjabin Rahim Moitri",
       price: "Price: 15000 (BDT)",
-      size: "Size: 24”/18”",
+      size: "Size: 24\"/18\"",
       medium: "Medium: Mixed Media"
     },
-
     {
       image: "https://res.cloudinary.com/db5yniogx/image/upload/v1735387315/Dreams_Sumana-Biswas-863x1024_xxdzra.jpg",
       title: "Dreams",
       artist: "Artist: Sumana Biswas",
       price: "Not for Sale",
-      size: "Size: 20”/24”",
+      size: "Size: 20\"/24\"",
       medium: "Medium: Acrylic on Canvas"
     },
-
     {
       image: "https://res.cloudinary.com/db5yniogx/image/upload/v1735387454/Folk-Motifs-of-Bangladesh_Dr.-Jahura-Khatun-768x748_zm7jsn.jpg",
       title: "Folk Motif of Bangladesh",
       artist: "Artist: Dr. Jahura Khatun",
       price: "Price: 15000 (BDT)",
-      size: "Size: 24”/24”",
+      size: "Size: 24\"/24\"",
       medium: "Medium: Acrylic"
     },
-
     {
       image: "https://res.cloudinary.com/db5yniogx/image/upload/v1735387568/Women-with-Nature_Dr.-Jahura-Khatun-768x759_edwbdk.jpg",
       title: "Women with Nature",
       artist: "Artist: Dr. Jahura Khatun",
       price: "Price: 20000 (BDT)",
-      size: "Size: 24”/24”",
+      size: "Size: 24\"/24\"",
       medium: "Medium: Acrylic"
     },
-
     {
       image: "https://res.cloudinary.com/db5yniogx/image/upload/v1735387698/%E0%A6%9C%E0%A6%9F%E0%A6%BF%E0%A6%B2%E0%A6%A4%E0%A6%BE%E0%A6%B0-%E0%A6%A7%E0%A6%BE%E0%A6%81%E0%A6%A7%E0%A6%BE%E0%A6%AF%E0%A6%BC-%E0%A6%AE%E0%A6%BF%E0%A6%B6%E0%A7%8D%E0%A6%B0-%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A4%E0%A6%BF%E0%A6%95%E0%A7%8D%E0%A6%B0%E0%A6%BF%E0%A6%AF%E0%A6%BC%E0%A6%BE_Nazmun-Nahar-768x1024_ysiefg.jpg",
       title: "জটিলতার ধাঁধায় মিশ্র প্রতিক্রিয়া/ Mixed Reactions to the Puzzle of Complexity",
       artist: "Artist: Nazmun Nahar",
       price: "Price: 135000 (BDT)",
-      size: "Size: 28”/35”",
+      size: "Size: 28\"/35\"",
       medium: "Medium: Acrylic on Canvas"
     },
-
     {
       image: "https://res.cloudinary.com/db5yniogx/image/upload/v1735387848/Resilience-in-Bloom_Ishrat-Rouf_vltode.jpg",
       title: "Resilience in Bloom",
       artist: "Artist: Ishrat Binte Rouf",
       price: "Price: 10000 (BDT)",
-      size: "Size: 24”/20”",
+      size: "Size: 24\"/20\"",
       medium: "Medium: Acrylic on Canvas"
     },
-
     {
       image: "https://res.cloudinary.com/db5yniogx/image/upload/v1735387989/What-Was-She-Wearing_Ishrat-Rouf-855x1024_emkhnm.jpg",
       title: "What Was She Wearing?",
       artist: "Artist: Ishrat Binte Rouf",
       price: "Price: 10000 (BDT)",
-      size: "Size: 24”/20”",
+      size: "Size: 24\"/20\"",
       medium: "Medium: Mixed Media"
     },
-
     {
       image: "https://res.cloudinary.com/db5yniogx/image/upload/v1735388148/%E0%A6%85%E0%A6%AC%E0%A6%9A%E0%A7%82%E0%A6%B0%E0%A7%8D%E0%A6%A3%E0%A6%BF%E0%A6%A4_Nipa-Gomes-1-768x1032_ksuupn.jpg",
       title: "অবচূর্ণিত",
       artist: "Artist: Nipa Gomes",
       price: "Price: 30000 (BDT)",
-      size: "Size: 2’/3’",
+      size: "Size: 2'/3'",
       medium: "Medium: Acrylic on Canvas"
     },
     {
@@ -165,7 +184,7 @@ import React from 'react';
       title: "বিবর্ণ",
       artist: "Artist: Nipa Gomes",
       price: "Price: 30000 (BDT)",
-      size: "Size: 2’/3’",
+      size: "Size: 2'/3'",
       medium: "Medium: Acrylic on Wood Panel"
     },
     {
@@ -173,7 +192,7 @@ import React from 'react';
       title: "ভেবেছিলেম ফিরব না রে",
       artist: "Artist: Anjana Shome",
       price: "Price: 15000 (BDT)",
-      size: "Size: 15”/20”",
+      size: "Size: 15\"/20\"",
       medium: "Medium: Mixed Media"
     },
     {
@@ -181,7 +200,7 @@ import React from 'react';
       title: "ঝরা পালক – ভাসা পালক",
       artist: "Artist: Anjana Shome",
       price: "Price: 15000 (BDT)",
-      size: "Size: 15”/20”",
+      size: "Size: 15\"/20\"",
       medium: "Medium: Mixed Media"
     },
     {
@@ -221,7 +240,7 @@ import React from 'react';
       title: "Ma (মা) – 01",
       artist: "Artist: Mst. Mukti Khatun",
       price: "Price: 20000 (BDT)",
-      size: "Size: 22” x  24”",
+      size: "Size: 22\" x  24\"",
       medium: "Medium: Acrylic on Canvas Paper"
     },
     {
@@ -229,7 +248,7 @@ import React from 'react';
       title: "Ma (মা) – 02",
       artist: "Artist: Mst. Mukti Khatun",
       price: "Price: 20000 (BDT)",
-      size: "Size: 20” x  26”",
+      size: "Size: 20\" x  26\"",
       medium: "Medium: Acrylic on Canvas Paper"
     },
     {
@@ -237,95 +256,51 @@ import React from 'react';
       title: "Ma (মা) – 03",
       artist: "Artist: Mst. Mukti Khatun",
       price: "Price: 20000 (BDT)",
-      size: "Size: 20” x  26”",
+      size: "Size: 20\" x  26\"",
       medium: "Medium: Acrylic on Canvas Paper"
     },
-    
-    // Add more art objects as needed...
-  ];
-
-   export const metadata = {
-  title: "Gallery Frida Kahlo",
-  description: "Explore the vibrant collection of Bangladeshi female artists at Shantibari's Gallery Frida Kahlo. Discover paintings, mixed media works, and more.",
-  keywords: "Bangladeshi art, female artists, Shantibari art exhibition, contemporary art Bangladesh, art gallery Dhaka",
-  openGraph: {
-    title: "Gallery Frida Kahlo",
-    description: "Exhibition featuring works by Bangladeshi female artists",
-    images: [artData[0].image],
-    url: "/gallery-frida-kahlo",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Gallery Frida Kahlo",
-    description: "Celebrating Bangladeshi female artists",
-    images: [artData[0].image],
-  },
-};
+];
 
 function FridaKahloGallery() {
-
-const generateStructuredData = () => {
-    const artworkList = artData.map(art => {
-      let offer = {};
-      
-      if (!art.price.includes("Not for Sale")) {
-        const priceMatch = art.price.match(/(\d+(,\d+)*)/);
-        const price = priceMatch ? parseFloat(priceMatch[0].replace(/,/g, '')) : 0;
-        
-        offer = {
-          "@type": "Offer",
-          price: price,
-          priceCurrency: "BDT",
-          availability: "InStock",
-          priceValidUntil: "2025-12-31"
-        };
-      }
-
-      return {
-        "@type": "VisualArtwork",
-        name: art.title,
-        image: art.image,
-        creator: {
-          "@type": "Person",
-          name: art.artist.replace("Artist: ", "")
-        },
-        artMedium: art.medium.replace("Medium: ", ""),
-        size: art.size.replace("Size: ", ""),
-        ...(Object.keys(offer).length > 0 && { offers: offer })
-      };
-    });
-
+  const generateStructuredData = () => {
     return {
       "@context": "https://schema.org",
-      "@type": "ArtGallery",
-      name: "Gallery Frida Kahlo",
-      description: "Exhibition featuring contemporary artworks by Bangladeshi female artists",
-      url: "/gallery-frida-kahlo",
-      image: artData[0].image,
-      mainEntityOfPage: {
-        "@type": "CollectionPage",
-        hasPart: artworkList
-      }
+      "@type": "ImageGallery",
+      "name": "Frida Kahlo Art Gallery - Shantibari",
+      "description": "A collection of artworks by various female artists.",
+      "url": "https://shantibaribd.org/gallery-frida-kahlo",
+      "image": artData.map(art => ({
+        "@type": "ImageObject",
+        "contentUrl": art.image,
+        "name": art.title,
+        "creator": {
+          "@type": "Person",
+          "name": art.artist.replace("Artist: ", "")
+        },
+        "description": `${art.title} - ${art.medium}. Size: ${art.size}. Price: ${art.price}.`
+      }))
     };
   };
 
-  const structuredData = generateStructuredData();
-
-
   return (
-    <div className="w-full bg-gray-100">
-
-       <script
+    <div className="bg-gray-100 min-h-screen">
+      <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateStructuredData()) }}
       />
-
       {/* Hero Section */}
-         <div className="w-full h-96 bg-gradient-to-r from-blue-500 to-purple-600 text-white flex items-center justify-center">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-center px-4">
-          Gallery Frida Kahlo
-        </h1>
+      <div
+        className="relative h-96 bg-cover bg-center"
+        style={{
+          backgroundImage: "url('https://res.cloudinary.com/db5yniogx/image/upload/v1735389656/frida-kahlo-in-blue-satin-blouse_u988dl.jpg')",
+        }}
+      >
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-center px-4 text-white">
+            Gallery Frida Kahlo
+          </h1>
+        </div>
       </div>
 
       {/* Art Gallery Section */}

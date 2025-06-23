@@ -2,60 +2,42 @@
 
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
+import lawyerData from "@/lib/data/lawyers";
 
-function LawyerCard({ name, description, imgSrc }) {
+function LawyerCard({ name, title, imgSrc }) {
   return (
-    <div className="w-60 h-[340px] p-4 bg-white rounded-xl flex flex-col items-center shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer">
-      <img
-        className="h-40 w-40 object-cover rounded-full border-gray-300"
-        src={imgSrc}
-        alt={name}
-      />
+    <div className="w-60 h-[340px] p-4 bg-white rounded-xl flex flex-col items-center shadow-md hover:shadow-lg transition-shadow duration-300">
+      <div className="relative h-40 w-40 rounded-full overflow-hidden border-gray-300">
+        <Image
+          src={imgSrc}
+          alt={`${name}, ${title} at Shantibari`}
+          fill
+          sizes="160px"
+          className="object-cover"
+        />
+      </div>
       <div className="p-3 text-center">
-        <h2 className="font-bold text-lg font-roboto text-gray-900">{name}</h2>
-        <p className="text-sm text-gray-600 font-roboto">{description}</p>
+        <h3 className="font-bold text-lg font-roboto text-gray-900">{name}</h3>
+        <p className="text-sm text-gray-600 font-roboto">{title}</p>
       </div>
     </div>
   );
 }
 
 export default function OurLawyers() {
-  const lawyers = [
-    {
-      id: 1,
-      name: "Adv. Nahid Shams",
-      description: "Director (Legal Services)",
-      imgSrc:
-        "https://res.cloudinary.com/db5yniogx/image/upload/v1735494831/nahidshamsshantibaricloud_wqbzwp.jpg",
-    },
-    {
-      id: 2,
-      name: "Adv. Mahjabin Rabbani",
-      description: "Advocate, Bangladesh Supreme Court",
-      imgSrc:
-        "https://res.cloudinary.com/db5yniogx/image/upload/v1740936984/mahjabinrabbani123-removebg-preview_1_kztsra.png",
-    },
-    {
-      id: 3,
-      name: "Adv. Fahriya Ferdous",
-      description: "Advocate, Bangladesh Supreme Court",
-      imgSrc:
-        "https://res.cloudinary.com/db5yniogx/image/upload/v1740936657/Adv-Fahriya-Ferdousecloud234-removebg-preview_1_jkohth.png",
-    },
-  ];
-
   return (
     <div className="bg-gray-200 w-full flex justify-center items-center py-12">
       <div className="w-full max-w-7xl px-4">
-        <h1 className="text-3xl font-bold text-center mb-8 font-playfair text-gray-900">
+        <h2 className="text-3xl font-bold text-center mb-8 font-playfair text-gray-900">
           Our Lawyers
-        </h1>
+        </h2>
         <div className="flex flex-wrap gap-6 justify-center">
-          {lawyers.map((lawyer) => (
-            <Link key={lawyer.id} href={`/lawyers/${lawyer.id}`}>
+          {Object.entries(lawyerData).map(([id, lawyer]) => (
+            <Link key={id} href={`/lawyers/${id}`}>
               <LawyerCard
                 name={lawyer.name}
-                description={lawyer.description}
+                title={lawyer.title}
                 imgSrc={lawyer.imgSrc}
               />
             </Link>
