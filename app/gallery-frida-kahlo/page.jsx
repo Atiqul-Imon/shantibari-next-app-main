@@ -245,11 +245,11 @@ import React from 'react';
   ];
 
    export const metadata = {
-  title: "Color of Her Soul – Art Expo by Shantibari",
-  description: "Explore the vibrant collection of Bangladeshi female artists at Shantibari's Color of Her Soul art exhibition. Discover paintings, mixed media works, and more.",
+  title: "Gallery Frida Kahlo",
+  description: "Explore the vibrant collection of Bangladeshi female artists at Shantibari's Gallery Frida Kahlo. Discover paintings, mixed media works, and more.",
   keywords: "Bangladeshi art, female artists, Shantibari art exhibition, contemporary art Bangladesh, art gallery Dhaka",
   openGraph: {
-    title: "Color of Her Soul – Art Expo by Shantibari",
+    title: "Gallery Frida Kahlo",
     description: "Exhibition featuring works by Bangladeshi female artists",
     images: [artData[0].image],
     url: "/gallery-frida-kahlo",
@@ -257,7 +257,7 @@ import React from 'react';
   },
   twitter: {
     card: "summary_large_image",
-    title: "Color of Her Soul – Art Expo by Shantibari",
+    title: "Gallery Frida Kahlo",
     description: "Celebrating Bangladeshi female artists",
     images: [artData[0].image],
   },
@@ -299,7 +299,7 @@ const generateStructuredData = () => {
     return {
       "@context": "https://schema.org",
       "@type": "ArtGallery",
-      name: "Color of Her Soul – Art Expo",
+      name: "Gallery Frida Kahlo",
       description: "Exhibition featuring contemporary artworks by Bangladeshi female artists",
       url: "/gallery-frida-kahlo",
       image: artData[0].image,
@@ -324,7 +324,7 @@ const generateStructuredData = () => {
       {/* Hero Section */}
          <div className="w-full h-96 bg-gradient-to-r from-blue-500 to-purple-600 text-white flex items-center justify-center">
         <h1 className="text-4xl md:text-5xl font-extrabold text-center px-4">
-          Color of Her Soul – Art Expo by Shantibari
+          Gallery Frida Kahlo
         </h1>
       </div>
 
