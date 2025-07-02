@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { authAPI, apiUtils } from '@/lib/api';
 
 export default function Register() {
   const [name, setName] = useState('');
@@ -24,32 +25,20 @@ export default function Register() {
     }
 
     try {
-      const res = await fetch('/api/auth/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          password,
-        }),
+      const response = await authAPI.register({
+        name,
+        email,
+        password,
       });
 
-      if (res.ok) {
-        const form = e.target;
-        form.reset();
-        router.push('/login');
-      } else {
-        const errorText = await res.text();
-        console.error("Server Error Response:", errorText);
-        setError('An unexpected error occurred on the server.');
-      }
-    } catch (error) {
-      setError('Something went wrong. Please try again.');
-      console.log('Error during registration: ', error);
+      const form = e.target;
+      form.reset();
+      router.push('/login');
+    } catch (err) {
+      const errorData = apiUtils.handleError(err);
+      setError(errorData.message);
     } finally {
-        setLoading(false);
+      setLoading(false);
     }
   };
 

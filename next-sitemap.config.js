@@ -4,8 +4,19 @@ const psychiatristData = require('./lib/data/psychiatrists.js').default;
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://shantibaribd.org', 
-  generateRobotsTxt: true, 
+  siteUrl: process.env.SITE_URL || 'https://shantibaribd.org',
+  generateRobotsTxt: true,
+  generateIndexSitemap: true,
+  exclude: ['/dashboard', '/login', '/register'],
+  robotsTxtOptions: {
+    policies: [
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: ['/dashboard', '/login', '/register'],
+      },
+    ],
+  },
   sitemapSize: 7000,
   changefreq: 'daily',
   priority: 0.7,
@@ -20,27 +31,60 @@ module.exports = {
   },
 
   additionalPaths: async (config) => {
-    const founderPaths = members.map(member => ({
-      loc: `/founder/${member.id}`,
-      changefreq: 'yearly',
-      priority: 0.8,
-      lastmod: new Date().toISOString(),
-    }));
-
-    const lawyerPaths = Object.keys(lawyerData).map(id => ({
+    const result = [];
+    
+    // Add founder pages
+    const founderIds = [1, 2, 3, 4, 5];
+    founderIds.forEach((id) => {
+      result.push({
+        loc: `/founder/${id}`,
+        changefreq: 'yearly',
+        priority: 0.8,
+        lastmod: new Date().toISOString(),
+      });
+    });
+    
+    // Add lawyer pages
+    const lawyerIds = [1, 2, 3];
+    lawyerIds.forEach((id) => {
+      result.push({
         loc: `/lawyers/${id}`,
         changefreq: 'yearly',
         priority: 0.8,
         lastmod: new Date().toISOString(),
-    }));
-
-    const psychiatristPaths = Object.keys(psychiatristData).map(slug => ({
+      });
+    });
+    
+    // Add psychiatrist/psychologist pages
+    const psychiatristSlugs = [
+      'dr-helal-uddin-ahmed',
+      'dr-nasim-jahan',
+      'razia-sultana-rima',
+      'm-s-mahmuda',
+      'tanzina-chowdhury',
+      'arpita-das'
+    ];
+    
+    psychiatristSlugs.forEach((slug) => {
+      result.push({
         loc: `/psychiatristandpsychologist/${slug}`,
         changefreq: 'yearly',
         priority: 0.8,
         lastmod: new Date().toISOString(),
-    }));
-
-    return [...founderPaths, ...lawyerPaths, ...psychiatristPaths];
+      });
+    });
+    
+    // Add advisor pages
+    const advisorIds = [1, 2];
+    advisorIds.forEach((id) => {
+      result.push({
+        loc: `/advisor/${id}`,
+        changefreq: 'yearly',
+        priority: 0.8,
+        lastmod: new Date().toISOString(),
+      });
+    });
+    
+    return result;
   },
 };

@@ -1,5 +1,7 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import lawyerData from "@/lib/data/lawyers";
 
 export const metadata = {
   title: "Legal Advice and Services - Shantibari",
@@ -93,6 +95,35 @@ function LegalAdviceDetails() {
     ]
   };
 
+  // Map lawyer name to lawyerData ID
+  const getIdByName = (name) => {
+    for (const id in lawyerData) {
+      if (lawyerData[id].name === name) {
+        return id;
+      }
+    }
+    return null;
+  };
+
+  // List of lawyers for the cards (should match lawyerData)
+  const lawyers = [
+    {
+      name: "Adv. Nahid Shams",
+      title: "Director, Legal Services",
+      image: "https://res.cloudinary.com/db5yniogx/image/upload/v1735494831/nahidshamsshantibaricloud_wqbzwp.jpg",
+    },
+    {
+      name: "Mahjabin Rabbani",
+      title: "Advocate, Supreme Court of Bangladesh",
+      image: "https://res.cloudinary.com/db5yniogx/image/upload/v1740936984/mahjabinrabbani123-removebg-preview_1_kztsra.png",
+    },
+    {
+      name: "Adv. Fahriya Ferdous",
+      title: "Advocate, Supreme Court of Bangladesh",
+      image: "https://res.cloudinary.com/db5yniogx/image/upload/v1740936657/Adv-Fahriya-Ferdousecloud234-removebg-preview_1_jkohth.png",
+    },
+  ];
+
   return (
     <>
       <script
@@ -170,69 +201,37 @@ function LegalAdviceDetails() {
             </header>
 
             <div className="flex flex-wrap justify-center gap-6">
-              {/* Lawyer Card 1 */}
-              <article
-                className="w-[300px] p-6 bg-white rounded-lg shadow-lg text-center"
-                itemScope
-                itemType="https://schema.org/Person"
-              >
-                <Image
-                  src="https://res.cloudinary.com/db5yniogx/image/upload/v1735494831/nahidshamsshantibaricloud_wqbzwp.jpg"
-                  alt="Advocate Nahid Shams portrait"
-                  width={160}
-                  height={160}
-                  className="rounded-full mx-auto mb-4"
-                />
-                <h3 className="text-xl font-semibold text-gray-800 mb-1" itemProp="name">
-                  Adv. Nahid Shams
-                </h3>
-                <p className="text-gray-600 font-roboto" itemProp="jobTitle">
-                  Director, Legal Services
-                </p>
-               
-              </article>
-
-                <article
-                className="w-[300px] p-6 bg-white rounded-lg shadow-lg text-center"
-                itemScope
-                itemType="https://schema.org/Person"
-                
-              >
-                <Image
-                  src="https://res.cloudinary.com/db5yniogx/image/upload/v1740936984/mahjabinrabbani123-removebg-preview_1_kztsra.png"
-                  alt="Mahjabin Rabbani portrait"
-                  width={160}
-                  height={160}
-                  className="rounded-full mx-auto mb-4"
-                />
-                <h3 className="text-xl font-semibold text-gray-800 mb-1" itemProp="name">
-                  Mahjabin Rabbani
-                </h3>
-                <p className="text-gray-600 font-roboto" itemProp="jobTitle">
-                  Advocate, Supreme Court of Bangladesh
-                </p>
-              </article>
-
-              {/* Lawyer Card 2 */}
-              <article
-                className="w-[300px] p-6 bg-white rounded-lg shadow-lg text-center"
-                itemScope
-                itemType="https://schema.org/Person"
-              >
-                <Image
-                  src="https://res.cloudinary.com/db5yniogx/image/upload/v1735314212/Adv-Fahriya-Ferdousecloud_sk71zm.jpg"
-                  alt="Advocate Fahriya Ferdous portrait"
-                  width={160}
-                  height={160}
-                  className="rounded-full mx-auto mb-4"
-                />
-                <h3 className="text-xl font-semibold text-gray-800 mb-1" itemProp="name">
-                  Adv. Fahriya Ferdous
-                </h3>
-                <p className="text-gray-600 font-roboto" itemProp="jobTitle">
-                  Advocate, Supreme Court of Bangladesh
-                </p>
-              </article>
+              {lawyers.map((lawyer) => {
+                const id = getIdByName(lawyer.name);
+                const card = (
+                  <article
+                    className="w-[300px] p-6 bg-white rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300 cursor-pointer"
+                    itemScope
+                    itemType="https://schema.org/Person"
+                  >
+                    <Image
+                      src={lawyer.image}
+                      alt={`${lawyer.name} portrait`}
+                      width={160}
+                      height={160}
+                      className="rounded-full mx-auto mb-4"
+                    />
+                    <h3 className="text-xl font-semibold text-gray-800 mb-1" itemProp="name">
+                      {lawyer.name}
+                    </h3>
+                    <p className="text-gray-600 font-roboto" itemProp="jobTitle">
+                      {lawyer.title}
+                    </p>
+                  </article>
+                );
+                return id ? (
+                  <Link key={lawyer.name} href={`/lawyers/${id}`} prefetch={false}>
+                    {card}
+                  </Link>
+                ) : (
+                  <div key={lawyer.name}>{card}</div>
+                );
+              })}
             </div>
           </div>
         </section>

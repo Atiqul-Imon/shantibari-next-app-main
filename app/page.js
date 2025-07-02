@@ -7,6 +7,8 @@ import OurLawyers from "@/component/OurLawyer";
 import OurServices from "@/component/OurServices";
 import OurTeam from "@/component/OurTeam";
 import PsychiatristPsychologist from "@/component/PsychiatristPsychologist";
+import Image from 'next/image';
+import Link from 'next/link';
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -63,6 +65,30 @@ export const metadata = {
   },
 };
 
+function JamdaniPromoBanner() {
+  return (
+    <section className="w-full flex justify-center my-0 py-0 bg-gray-100">
+      <div className="w-full max-w-4xl bg-gradient-to-br from-pink-50 via-rose-100 to-amber-50 rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row items-center border-2 border-rose-200">
+        <Image
+          src="/images/jamdaniutsob.webp"
+          alt="Celebrating Jamdani – A Textile Heritage Exhibition for Women Invitation"
+          width={400}
+          height={533}
+          className="object-cover w-full md:w-1/2 h-auto rounded-3xl shadow-lg border-2 border-amber-100"
+        />
+        <div className="p-8 flex-1 text-center md:text-left">
+          <h2 className="text-3xl font-extrabold text-rose-600 mb-2 tracking-tight drop-shadow">Celebrating Jamdani</h2>
+          <p className="mb-4 text-amber-700 text-lg font-medium">A Textile Heritage Exhibition for Women in Dhaka<br/><span className="font-semibold text-rose-500">July 4, 2025</span></p>
+          <p className="mb-4 text-gray-700">Discover our rich textile legacy through design, dialogue, and display. <span className="font-semibold">Official invitation and event details inside.</span></p>
+          <Link href="/celebrating-jamdani">
+            <span className="inline-block bg-gradient-to-r from-rose-400 via-pink-400 to-amber-300 text-white px-6 py-3 rounded-full font-bold hover:scale-105 transition-transform cursor-pointer shadow-md">See Invitation</span>
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   return (
     <>
@@ -75,6 +101,7 @@ export default function Home() {
       <OurAdvisors />
       <OurLawyers />
       <PsychiatristPsychologist />
+      <JamdaniPromoBanner />
       <OurServices />
       <OurTeam />
       <CharityMorganCafe />

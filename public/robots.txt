@@ -1,6 +1,9 @@
 # *
 User-agent: *
 Allow: /
+Disallow: /dashboard
+Disallow: /login
+Disallow: /register
 
 # Host
 Host: https://shantibaribd.org

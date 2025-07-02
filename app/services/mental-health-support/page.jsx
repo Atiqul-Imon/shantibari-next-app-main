@@ -1,4 +1,6 @@
 import React from "react";
+import Link from "next/link";
+import psychiatristData from "@/lib/data/psychiatrists";
 import Head from "next/head";
 
 export async function generateMetadata() {
@@ -86,6 +88,16 @@ const MentalHealthSupport = () => {
         "https://res.cloudinary.com/db5yniogx/image/upload/v1735317781/Arpitadascloud_gdnt8q.png",
     },
   ];
+
+  // Map team member name to psychiatristData slug
+  const getSlugByName = (name) => {
+    for (const slug in psychiatristData) {
+      if (psychiatristData[slug].name === name) {
+        return slug;
+      }
+    }
+    return null;
+  };
 
   // JSON-LD structured data
   const serviceJsonLd = {
@@ -214,43 +226,38 @@ const MentalHealthSupport = () => {
         </section>
 
         {/* Team Section */}
-        <section
-          aria-labelledby="mental-health-team"
-          className="bg-gray-100 py-12"
-        >
-          <div className="max-w-[1440px] mx-auto px-4">
-            <h2
-              id="mental-health-team"
-              className="text-3xl font-bold mb-8 text-center text-gray-800"
-            >
-              Our Team for Mental Health
-            </h2>
-
-            <div className="flex flex-wrap justify-center gap-8">
-              {teamMembers.map((member, index) => (
-                <article
-                  key={index}
-                  className="w-[320px] bg-white p-8 rounded-lg shadow-lg text-center"
+        <section className="py-16 bg-gray-100">
+          <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
+            Our Team for Mental Health
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {teamMembers.map((member, idx) => {
+              const slug = getSlugByName(member.name);
+              const card = (
+                <div
+                  className="flex flex-col items-center bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow duration-300 cursor-pointer"
                 >
-                  <figure>
-                    <img
-                      src={member.image}
-                      alt={`Portrait of ${member.name} - ${member.role}`}
-                      className="w-32 h-32 rounded-full mx-auto mb-4"
-                      loading="lazy"
-                      width={128}
-                      height={128}
-                    />
-                    <figcaption>
-                      <h3 className="text-xl font-semibold text-gray-800">
-                        {member.name}
-                      </h3>
-                      <p className="text-gray-600 mb-4">{member.role}</p>
-                    </figcaption>
-                  </figure>
-                </article>
-              ))}
-            </div>
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-28 h-28 rounded-full object-cover mb-4 border-4 border-indigo-100"
+                  />
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                    {member.name}
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-2 text-center">
+                    {member.role}
+                  </p>
+                </div>
+              );
+              return slug ? (
+                <Link key={member.name} href={`/psychiatristandpsychologist/${slug}`} prefetch={false}>
+                  {card}
+                </Link>
+              ) : (
+                <div key={member.name}>{card}</div>
+              );
+            })}
           </div>
         </section>
 
