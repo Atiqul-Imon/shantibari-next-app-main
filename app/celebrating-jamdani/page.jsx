@@ -71,7 +71,7 @@ export default function CelebratingJamdaniPage() {
         <div className="text-left text-rose-900 mb-6 leading-relaxed text-lg">
           <p>Hello!</p>
           <p className="mt-2">I hope you're doing well.</p>
-          <p className="mt-2">I'm delighted to invite you to <b>“Celebrating Jamdani – A Textile Heritage Exhibition”</b>. The event will take place on <b>Friday, July 4, 2025</b>.</p>
+          <p className="mt-2">I'm delighted to invite you to <b>"Celebrating Jamdani – A Textile Heritage Exhibition"</b>. The event will take place on <b>Friday, July 4, 2025</b>.</p>
           <p className="mt-2">I'm sharing the official invitation letter with all the details. Looking forward to seeing you there!</p>
           <p className="mt-4 font-semibold">Warm regards,</p>
           <p>Sabreena S. Badhan<br/>Program Executive,<br/>Shantibari<br/>3/1, Block-F, Flat-5A, Lalmatia, Dhaka<br/>01707937809 | 01936012413</p>
@@ -82,6 +82,23 @@ export default function CelebratingJamdaniPage() {
         >
           Back to Home
         </a>
+      </section>
+      {/* Our Location Section with Google Map */}
+      <section className="w-full max-w-2xl mt-10 mb-8 bg-rose-50/60 rounded-3xl shadow p-6 z-10 border border-amber-100 flex flex-col items-center">
+        <h2 className="text-2xl font-bold text-rose-700 mb-4 text-center">Our Location</h2>
+        <div className="w-full rounded-lg overflow-hidden shadow-lg">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.7525685504634!2d90.3673694!3d23.7562013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf50d0b3e65d%3A0x1aea194f96079cd5!2s3%2F1%20Block%20%23%20F%2C%20Dhaka%201205!5e0!3m2!1sen!2sbd!4v1749401385881!5m2!1sen!2sbd"
+            width="100%"
+            height="350"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Shantibari Location on Google Map"
+            className="rounded-lg"
+          ></iframe>
+        </div>
       </section>
     </main>
   );
