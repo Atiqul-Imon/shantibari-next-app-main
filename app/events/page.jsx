@@ -62,6 +62,29 @@ const Event = () => {
             All Events
           </h2>
           <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Jamdani Event - Past Event */}
+            <div className="bg-gradient-to-br from-rose-50 to-amber-50 p-6 rounded-lg shadow-lg border-2 border-rose-200 relative overflow-hidden">
+              <div className="absolute top-4 right-4 bg-rose-500 text-white px-3 py-1 rounded-full text-sm font-semibold z-10">
+                Past Event
+              </div>
+              <img
+                src="/images/jamdaniutsob.webp"
+                alt="Celebrating Jamdani – A Textile Heritage Exhibition"
+                className="w-full h-48 object-cover rounded-t-lg"
+              />
+              <h3 className="text-xl font-semibold text-rose-700 mt-4">
+                Celebrating Jamdani – A Textile Heritage Exhibition
+              </h3>
+              <p className="text-amber-700 font-medium">Date: July 4, 2025</p>
+              <p className="text-gray-600 text-sm mt-2">A special exhibition celebrating our rich textile legacy through design, dialogue, and display.</p>
+              <a
+                href="/celebrating-jamdani"
+                className="mt-4 inline-block bg-gradient-to-r from-rose-400 to-amber-300 text-white px-4 py-2 rounded-full font-semibold hover:scale-105 transition-transform"
+              >
+                View Details
+              </a>
+            </div>
+
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <img
                 src="https://res.cloudinary.com/db5yniogx/image/upload/v1736943683/parenting03_jpmi4u.jpg"
@@ -84,11 +107,11 @@ const Event = () => {
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <img
                 src="https://res.cloudinary.com/db5yniogx/image/upload/v1736944336/deepascanvas2_twqksk.jpg"
-                alt="Solo Art Exhibition - “DEEPA’S CANVAS”, Arunima Saha Deepa"
+                alt="Solo Art Exhibition - DEEPA'S CANVAS, Arunima Saha Deepa"
                 className="w-full h-48 object-cover rounded-t-lg"
               />
               <h3 className="text-xl font-semibold text-gray-800 mt-4">
-                Solo Art Exhibition - “DEEPA’S CANVAS”, Arunima Saha Deepa{" "}
+                Solo Art Exhibition - "DEEPA'S CANVAS", Arunima Saha Deepa{" "}
               </h3>
               <p className="text-gray-600">Date: November 3-6, 2023</p>
               <a
@@ -106,7 +129,7 @@ const Event = () => {
                 className="w-full h-48 object-cover rounded-t-lg"
               />
               <h3 className="text-xl font-semibold text-gray-800 mt-4">
-                “ত্রয়ী” - শান্তিবাড়ি’তে তিন নারী উদ্যোক্তার পণ্য প্রদর্শনী{" "}
+                "ত্রয়ী" - শান্তিবাড়ি'তে তিন নারী উদ্যোক্তার পণ্য প্রদর্শনী{" "}
               </h3>
               <p className="text-gray-600">Date: October 13-14, 2023</p>
               <a
@@ -124,7 +147,7 @@ const Event = () => {
                 className="w-full h-48 object-cover rounded-t-lg"
               />
               <h3 className="text-xl font-semibold text-gray-800 mt-4">
-                শরৎ উৎসব - “মেঘ বলেছে যাবো যাবো”{" "}
+                শরৎ উৎসব - "মেঘ বলেছে যাবো যাবো"{" "}
               </h3>
               <p className="text-gray-600">Date: September 8, 2023</p>
               <a
@@ -142,7 +165,7 @@ const Event = () => {
                 className="w-full h-48 object-cover rounded-t-lg"
               />
               <h3 className="text-xl font-semibold text-gray-800 mt-4">
-                ভালো থাকার উৎসব - “Celebration of Life” by Shantibari{" "}
+                ভালো থাকার উৎসব - "Celebration of Life" by Shantibari{" "}
               </h3>
               <p className="text-gray-600">Date: July 27-28, 2023</p>
               <a
@@ -196,7 +219,7 @@ const Event = () => {
                 className="w-full h-48 object-cover rounded-t-lg"
               />
               <h3 className="text-xl font-semibold text-gray-800 mt-4">
-                Solo Art Exhibition - “The Beginning”, by Sadia Afrin Arin{" "}
+                Solo Art Exhibition - "The Beginning", by Sadia Afrin Arin{" "}
               </h3>
               <p className="text-gray-600">Date: March 3-5, 2023</p>
               <a
