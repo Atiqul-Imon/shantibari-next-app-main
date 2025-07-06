@@ -101,7 +101,7 @@ export default function Home() {
       <OurAdvisors />
       <OurLawyers />
       <PsychiatristPsychologist />
-      <JamdaniPromoBanner />
+     
       <OurServices />
       <OurTeam />
       <CharityMorganCafe />
