@@ -7,7 +7,6 @@ import OurLawyers from "@/component/OurLawyer";
 import OurServices from "@/component/OurServices";
 import OurTeam from "@/component/OurTeam";
 import PsychiatristPsychologist from "@/component/PsychiatristPsychologist";
-import RecruitmentBanner from "@/component/RecruitmentBanner";
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -78,8 +77,6 @@ export default function Home() {
       <OurAdvisors />
       <OurLawyers />
       <PsychiatristPsychologist />
-    
-      <RecruitmentBanner />
       <OurServices />
       <OurTeam />
       <CharityMorganCafe />
