@@ -29,7 +29,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const advisor = advisors.find((advisor) => advisor.id === parseInt(params.id));
+  const { id } = await params;
+  const advisor = advisors.find((advisor) => advisor.id === parseInt(id));
   
   if (!advisor) {
     return {
@@ -49,7 +50,8 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function AdvisorDetail({ params }) {
-  const advisor = advisors.find((advisor) => advisor.id === parseInt(params.id));
+  const { id } = await params;
+  const advisor = advisors.find((advisor) => advisor.id === parseInt(id));
 
   if (!advisor) {
     return <p className="text-center text-red-500">Advisor not found.</p>;

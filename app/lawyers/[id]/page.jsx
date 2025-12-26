@@ -11,7 +11,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-    const lawyer = lawyerData[params.id];
+    const { id } = await params;
+    const lawyer = lawyerData[id];
     if (!lawyer) {
         return {
             title: "Lawyer not found",
@@ -29,7 +30,8 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function LawyerDetails({ params }) {
-  const lawyer = lawyerData[params.id];
+  const { id } = await params;
+  const lawyer = lawyerData[id];
 
   if (!lawyer) {
     return (
@@ -95,8 +97,7 @@ export default async function LawyerDetails({ params }) {
             <h1 className="text-4xl font-bold mt-6 font-playfair text-gray-800">
               {lawyer.name}
             </h1>
-            <p className="text-lg text-gray-600 mt-4 text-left
-             leading-relaxed whitespace-pre-line">
+            <p className="text-lg text-gray-600 mt-4 text-left leading-relaxed whitespace-pre-line">
               {lawyer.description}
             </p>
           </div>

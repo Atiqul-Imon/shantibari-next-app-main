@@ -9,7 +9,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
   const profile = data[slug];
 
   if (!profile) {
@@ -63,7 +63,7 @@ const ProfileContent = ({ description }) => {
 }
 
 export default async function ProfilePage({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
   const profile = data[slug];
 
   if (!profile) {

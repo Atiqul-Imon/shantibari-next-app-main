@@ -8,7 +8,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const member = members.find((member) => member.id === parseInt(params.id));
+  const { id } = await params;
+  const member = members.find((member) => member.id === parseInt(id));
 
   if (!member) {
     return {
@@ -47,7 +48,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function FounderDetail({ params }) {
-  const { id } = params;
+  const { id } = await params;
   const member = members.find((member) => member.id === parseInt(id));
 
   if (!member) {
